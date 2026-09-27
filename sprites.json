@@ -1,0 +1,30 @@
+{
+  "assets/anim/water.png": {
+    "cols": 2,
+    "rows": 1,
+    "frames": 2,
+    "step": 24,
+    "psm": 2
+  },
+  "assets/anim/fire.png": {
+    "cols": 2,
+    "rows": 1,
+    "frames": 2,
+    "step": 8,
+    "psm": 2
+  },
+  "assets/anim/lamp.png": {
+    "cols": 2,
+    "rows": 1,
+    "frames": 2,
+    "step": 22,
+    "psm": 2
+  },
+  "assets/anim/beacon.png": {
+    "cols": 2,
+    "rows": 1,
+    "frames": 2,
+    "step": 10,
+    "psm": 2
+  }
+}

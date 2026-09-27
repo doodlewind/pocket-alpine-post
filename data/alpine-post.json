@@ -1,0 +1,7962 @@
+{
+  "format": "rpgkit-project/v1",
+  "title": "Alpine Post",
+  "tileSize": 16,
+  "start": {
+    "map": "hub",
+    "x": 12,
+    "y": 12,
+    "dir": "up"
+  },
+  "initialGold": 0,
+  "sheets": [
+    {
+      "id": "town",
+      "cols": 12,
+      "rows": 11,
+      "pak": "chunks"
+    },
+    {
+      "id": "dun",
+      "cols": 12,
+      "rows": 11,
+      "pak": "chunks",
+      "defaultPassage": "block",
+      "pass": [
+        24,
+        25,
+        30,
+        42,
+        48,
+        50,
+        52
+      ]
+    },
+    {
+      "id": "farm",
+      "cols": 12,
+      "rows": 11,
+      "pak": "chunks"
+    },
+    {
+      "id": "custom",
+      "cols": 8,
+      "rows": 8,
+      "pak": "chunks"
+    }
+  ],
+  "commonEvents": [
+    {
+      "id": "ce-pick-parcel",
+      "trigger": "none",
+      "commands": [
+        {
+          "op": "variable",
+          "id": "parcels",
+          "set": {
+            "op": "add",
+            "value": 1
+          }
+        },
+        {
+          "op": "se",
+          "name": "coin",
+          "volume": 50
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "letter-farmer",
+      "name": "Letter: Farm",
+      "sprite": "town.93"
+    },
+    {
+      "id": "letter-miner",
+      "name": "Letter: Mine",
+      "sprite": "town.94"
+    },
+    {
+      "id": "letter-keeper",
+      "name": "Letter: Keeper",
+      "sprite": "town.95"
+    },
+    {
+      "id": "hay",
+      "name": "Dry Hay",
+      "sprite": "farm.96"
+    },
+    {
+      "id": "soup",
+      "name": "Hot Soup",
+      "sprite": "dun.116"
+    },
+    {
+      "id": "matches",
+      "name": "Matches",
+      "sprite": "town.126"
+    },
+    {
+      "id": "stamp",
+      "name": "Stamp",
+      "sprite": "town.105"
+    },
+    {
+      "id": "mushroom",
+      "name": "Mushrooms",
+      "sprite": "town.29"
+    }
+  ],
+  "sprites": {
+    "postmaster": {
+      "kind": "image",
+      "src": "assets/npc/postmaster.png"
+    },
+    "shopkeeper": {
+      "kind": "image",
+      "src": "assets/npc/shopkeeper.png"
+    },
+    "clerk": {
+      "kind": "image",
+      "src": "assets/npc/clerk.png"
+    },
+    "farmer": {
+      "kind": "image",
+      "src": "assets/npc/farmer.png"
+    },
+    "miner": {
+      "kind": "image",
+      "src": "assets/npc/miner.png"
+    },
+    "hermit": {
+      "kind": "image",
+      "src": "assets/npc/hermit.png"
+    },
+    "keeper": {
+      "kind": "image",
+      "src": "assets/npc/keeper.png"
+    },
+    "wanderer": {
+      "kind": "image",
+      "src": "assets/npc/wanderer.png"
+    },
+    "sheep": {
+      "kind": "image",
+      "src": "assets/npc/sheep.png"
+    },
+    "chest-closed": {
+      "kind": "image",
+      "src": "assets/npc/chest-closed.png"
+    },
+    "chest-open": {
+      "kind": "image",
+      "src": "assets/npc/chest-open.png"
+    },
+    "sign": {
+      "kind": "image",
+      "src": "assets/npc/sign.png"
+    },
+    "mailbox": {
+      "kind": "image",
+      "src": "assets/npc/mailbox.png"
+    },
+    "parcel": {
+      "kind": "image",
+      "src": "assets/npc/parcel.png"
+    },
+    "hay": {
+      "kind": "image",
+      "src": "assets/npc/hay.png"
+    },
+    "mushrooms": {
+      "kind": "image",
+      "src": "assets/npc/mushrooms.png"
+    },
+    "fire-off": {
+      "kind": "image",
+      "src": "assets/npc/fire-off.png"
+    },
+    "lamp-off": {
+      "kind": "image",
+      "src": "assets/npc/lamp-off.png"
+    }
+  },
+  "maps": [
+    {
+      "id": "hub",
+      "name": "Mountain Hamlet",
+      "width": 24,
+      "height": 15,
+      "sheets": [
+        "town",
+        "farm",
+        "dun",
+        "custom"
+      ],
+      "ground": [
+        "town.0",
+        "custom.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.43",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.88",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "custom.0",
+        "custom.1",
+        "town.42",
+        "town.39",
+        "town.41",
+        "town.42",
+        "town.41",
+        "town.41",
+        "town.42",
+        "town.39",
+        "town.42",
+        "town.39",
+        "town.41",
+        "town.39",
+        "town.41",
+        "town.41",
+        "town.39",
+        "town.41",
+        "town.39",
+        "town.42",
+        "town.40",
+        "town.42",
+        "town.40",
+        "town.41",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.0",
+        "town.88",
+        "town.1",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "dun.30",
+        "dun.30",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "dun.30",
+        "dun.30",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1"
+      ],
+      "events": [
+        {
+          "id": "postmaster",
+          "name": "Postmaster",
+          "x": 12,
+          "y": 9,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "postmaster",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "POSTMASTER: Storm took the road out.",
+                    "The last cable car leaves at dusk.",
+                    "Three letters must go up the mountain",
+                    "today. Will you carry the bag?"
+                  ]
+                },
+                {
+                  "op": "choices",
+                  "prompt": "Take the mail route?",
+                  "options": [
+                    {
+                      "text": "Take the mail",
+                      "commands": [
+                        {
+                          "op": "if",
+                          "if": {
+                            "kind": "switch",
+                            "id": "mailbag"
+                          },
+                          "then": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "POSTMASTER: Farm, mine, lighthouse.",
+                                "Don't miss a single one."
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": "switch",
+                              "id": "mailbag",
+                              "value": true
+                            },
+                            {
+                              "op": "item",
+                              "item": "letter-farmer",
+                              "set": "add",
+                              "count": 1
+                            },
+                            {
+                              "op": "item",
+                              "item": "letter-miner",
+                              "set": "add",
+                              "count": 1
+                            },
+                            {
+                              "op": "item",
+                              "item": "letter-keeper",
+                              "set": "add",
+                              "count": 1
+                            },
+                            {
+                              "op": "se",
+                              "name": "receive"
+                            },
+                            {
+                              "op": "text",
+                              "lines": [
+                                "POSTMASTER: Farm east, mine west, and the",
+                                "lighthouse beyond the pine trail."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Not yet",
+                      "commands": [
+                        {
+                          "op": "text",
+                          "lines": [
+                            "POSTMASTER: Dusk won't wait, courier."
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "shopkeeper",
+          "name": "Shopkeeper",
+          "x": 4,
+          "y": 3,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "shopkeeper",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "KEEPER: Matches, hot soup, stamps —",
+                    "everything a mountain route needs."
+                  ]
+                },
+                {
+                  "op": "choices",
+                  "prompt": "General store:",
+                  "options": [
+                    {
+                      "text": "Matches (5g)",
+                      "commands": [
+                        {
+                          "op": "if",
+                          "if": {
+                            "kind": "gold",
+                            "amount": 5
+                          },
+                          "then": [
+                            {
+                              "op": "gold",
+                              "set": "sub",
+                              "amount": 5
+                            },
+                            {
+                              "op": "item",
+                              "item": "matches",
+                              "set": "add",
+                              "count": 1
+                            },
+                            {
+                              "op": "text",
+                              "lines": [
+                                "KEEPER: Dry tinder meets its match."
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "KEEPER: Five gold, friend. The chest",
+                                "up north has loose coin, they say."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Hot soup (15g)",
+                      "commands": [
+                        {
+                          "op": "if",
+                          "if": {
+                            "kind": "gold",
+                            "amount": 15
+                          },
+                          "then": [
+                            {
+                              "op": "gold",
+                              "set": "sub",
+                              "amount": 15
+                            },
+                            {
+                              "op": "item",
+                              "item": "soup",
+                              "set": "add",
+                              "count": 1
+                            },
+                            {
+                              "op": "text",
+                              "lines": [
+                                "KEEPER: Still steaming. For the miner?",
+                                "He has not left his hut in days."
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "KEEPER: Fifteen gold a bowl. The rain",
+                                "makes every copper feel farther."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Stamp (10g)",
+                      "commands": [
+                        {
+                          "op": "if",
+                          "if": {
+                            "kind": "gold",
+                            "amount": 10
+                          },
+                          "then": [
+                            {
+                              "op": "gold",
+                              "set": "sub",
+                              "amount": 10
+                            },
+                            {
+                              "op": "item",
+                              "item": "stamp",
+                              "set": "add",
+                              "count": 1
+                            },
+                            {
+                              "op": "text",
+                              "lines": [
+                                "KEEPER: First-class ink, mountain-grade."
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "KEEPER: Stamps cost ten. The east farm",
+                                "pays well for a hand with sheep."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Sell mushrooms",
+                      "commands": [
+                        {
+                          "op": "if",
+                          "if": {
+                            "kind": "item",
+                            "id": "mushroom",
+                            "count": 2
+                          },
+                          "then": [
+                            {
+                              "op": "item",
+                              "item": "mushroom",
+                              "set": "sub",
+                              "count": 2
+                            },
+                            {
+                              "op": "gold",
+                              "set": "add",
+                              "amount": 6
+                            },
+                            {
+                              "op": "text",
+                              "lines": [
+                                "KEEPER: Two woodland mushrooms, six gold.",
+                                "A fair price on a wet day."
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": "if",
+                              "if": {
+                                "kind": "item",
+                                "id": "mushroom",
+                                "count": 1
+                              },
+                              "then": [
+                                {
+                                  "op": "item",
+                                  "item": "mushroom",
+                                  "set": "sub",
+                                  "count": 1
+                                },
+                                {
+                                  "op": "gold",
+                                  "set": "add",
+                                  "amount": 3
+                                },
+                                {
+                                  "op": "text",
+                                  "lines": [
+                                    "KEEPER: One mushroom, three gold. The",
+                                    "pine trail grows more by the minute."
+                                  ]
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": "text",
+                                  "lines": [
+                                    "KEEPER: Bring pine-trail mushrooms and",
+                                    "I will buy them, three gold each."
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "clerk",
+          "name": "Parcel Clerk",
+          "x": 6,
+          "y": 3,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "clerk",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "CLERK: Five of my parcels blew across",
+                    "the mountain. I would pay twenty gold",
+                    "for all five."
+                  ]
+                },
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "variable",
+                    "id": "parcels",
+                    "op": ">=",
+                    "value": 5
+                  },
+                  "then": [
+                    {
+                      "op": "if",
+                      "if": {
+                        "kind": "switch",
+                        "id": "parcels-done"
+                      },
+                      "then": [
+                        {
+                          "op": "text",
+                          "lines": [
+                            "CLERK: The route is safer with you on it."
+                          ]
+                        }
+                      ],
+                      "else": [
+                        {
+                          "op": "switch",
+                          "id": "parcels-done",
+                          "value": true
+                        },
+                        {
+                          "op": "gold",
+                          "set": "add",
+                          "amount": 20
+                        },
+                        {
+                          "op": "se",
+                          "name": "coin"
+                        },
+                        {
+                          "op": "text",
+                          "lines": [
+                            "CLERK: All five! Here is twenty gold,",
+                            "and my thanks. Rain or shine, courier."
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "CLERK: Check the farm, mine, pine trail,",
+                        "and the lighthouse path. Wind travels."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "village-chest",
+          "name": "Rainy-Day Chest",
+          "x": 21,
+          "y": 3,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "chest-closed",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "gold",
+                  "set": "add",
+                  "amount": 25
+                },
+                {
+                  "op": "se",
+                  "name": "coin"
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "Found 25 gold saved for cable repairs.",
+                    "The mountain can have it, for today."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": "chest-open",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "Empty now. The rain drums the lid like",
+                    "a counter waiting for coin."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sign",
+          "name": "Hamlet Sign",
+          "x": 9,
+          "y": 8,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "sign",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "<Mountain Hamlet>",
+                    "E: East-Slope Farm   W: West Mine",
+                    "N: Pine Trail -> Lighthouse"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mailbox",
+          "name": "Post Box",
+          "x": 14,
+          "y": 10,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "mailbox",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "Out of service — the road is out.",
+                    "All mail goes by hand up the trail."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ropeway-sign",
+          "name": "Cable-Car Notice",
+          "x": 16,
+          "y": 11,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "sign",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "<Cable Car Station>",
+                    "Last car today: dusk. After that,",
+                    "the mountain walks alone."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "wanderer",
+          "name": "Wandering Farmer",
+          "x": 16,
+          "y": 9,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "wanderer",
+              "blocks": true,
+              "moveType": "random",
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "FARMER: The east bridge holds, mostly.",
+                    "Mind the sheep. They have opinions."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate-east",
+          "name": "Path to the Farm",
+          "x": 23,
+          "y": 7,
+          "pages": [
+            {
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "farm",
+                  "x": 1,
+                  "y": 7,
+                  "dir": "right"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate-west",
+          "name": "Path to the Mine",
+          "x": 0,
+          "y": 7,
+          "pages": [
+            {
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "mine",
+                  "x": 14,
+                  "y": 6,
+                  "dir": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "gate-north",
+          "name": "Path to the Pines",
+          "x": 12,
+          "y": 0,
+          "pages": [
+            {
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "pine",
+                  "x": 9,
+                  "y": 10,
+                  "dir": "up",
+                  "fade": 0.3
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "upper": [
+        [
+          155,
+          "town.102"
+        ],
+        [
+          50,
+          "town.44"
+        ],
+        [
+          51,
+          "town.44"
+        ],
+        [
+          52,
+          "town.44"
+        ],
+        [
+          53,
+          "town.44"
+        ],
+        [
+          54,
+          "town.44"
+        ],
+        [
+          55,
+          "town.44"
+        ],
+        [
+          122,
+          "town.44"
+        ],
+        [
+          123,
+          "town.44"
+        ],
+        [
+          125,
+          "town.44"
+        ],
+        [
+          126,
+          "town.44"
+        ],
+        [
+          127,
+          "town.44"
+        ],
+        [
+          74,
+          "town.46"
+        ],
+        [
+          79,
+          "town.47"
+        ],
+        [
+          98,
+          "town.46"
+        ],
+        [
+          103,
+          "town.47"
+        ],
+        [
+          273,
+          "town.44"
+        ],
+        [
+          274,
+          "town.44"
+        ],
+        [
+          275,
+          "town.44"
+        ],
+        [
+          277,
+          "town.44"
+        ],
+        [
+          278,
+          "town.44"
+        ],
+        [
+          321,
+          "town.44"
+        ],
+        [
+          322,
+          "town.44"
+        ],
+        [
+          323,
+          "town.44"
+        ],
+        [
+          324,
+          "town.44"
+        ],
+        [
+          325,
+          "town.44"
+        ],
+        [
+          326,
+          "town.44"
+        ],
+        [
+          297,
+          "town.46"
+        ],
+        [
+          302,
+          "town.47"
+        ],
+        [
+          68,
+          "town.68"
+        ],
+        [
+          69,
+          "town.68"
+        ],
+        [
+          70,
+          "town.68"
+        ],
+        [
+          92,
+          "town.71"
+        ],
+        [
+          94,
+          "town.71"
+        ],
+        [
+          116,
+          "town.68"
+        ],
+        [
+          118,
+          "town.68"
+        ],
+        [
+          117,
+          "town.85"
+        ],
+        [
+          260,
+          "town.3"
+        ],
+        [
+          261,
+          "town.3"
+        ],
+        [
+          262,
+          "town.3"
+        ],
+        [
+          263,
+          "town.3"
+        ],
+        [
+          332,
+          "town.3"
+        ],
+        [
+          333,
+          "town.3"
+        ],
+        [
+          334,
+          "town.3"
+        ],
+        [
+          335,
+          "town.3"
+        ],
+        [
+          284,
+          "town.3"
+        ],
+        [
+          308,
+          "town.3"
+        ],
+        [
+          287,
+          "town.3"
+        ],
+        [
+          311,
+          "town.3"
+        ],
+        [
+          243,
+          "town.29"
+        ],
+        [
+          89,
+          "town.17"
+        ],
+        [
+          270,
+          "town.30"
+        ],
+        [
+          306,
+          "town.3"
+        ],
+        [
+          0,
+          "town.2"
+        ],
+        [
+          336,
+          "town.2"
+        ],
+        [
+          1,
+          "town.26"
+        ],
+        [
+          337,
+          "town.26"
+        ],
+        [
+          2,
+          "farm.15"
+        ],
+        [
+          338,
+          "farm.3"
+        ],
+        [
+          3,
+          "town.2"
+        ],
+        [
+          339,
+          "town.2"
+        ],
+        [
+          4,
+          "farm.26"
+        ],
+        [
+          340,
+          "town.2"
+        ],
+        [
+          5,
+          "town.15"
+        ],
+        [
+          341,
+          "farm.15"
+        ],
+        [
+          6,
+          "town.3"
+        ],
+        [
+          342,
+          "farm.3"
+        ],
+        [
+          7,
+          "town.26"
+        ],
+        [
+          343,
+          "farm.3"
+        ],
+        [
+          8,
+          "town.26"
+        ],
+        [
+          344,
+          "farm.15"
+        ],
+        [
+          9,
+          "farm.3"
+        ],
+        [
+          345,
+          "town.15"
+        ],
+        [
+          10,
+          "town.3"
+        ],
+        [
+          346,
+          "town.2"
+        ],
+        [
+          11,
+          "farm.3"
+        ],
+        [
+          347,
+          "town.2"
+        ],
+        [
+          348,
+          "town.27"
+        ],
+        [
+          13,
+          "farm.3"
+        ],
+        [
+          349,
+          "town.14"
+        ],
+        [
+          14,
+          "farm.15"
+        ],
+        [
+          350,
+          "town.15"
+        ],
+        [
+          15,
+          "town.14"
+        ],
+        [
+          351,
+          "town.15"
+        ],
+        [
+          16,
+          "town.3"
+        ],
+        [
+          352,
+          "farm.3"
+        ],
+        [
+          17,
+          "town.3"
+        ],
+        [
+          353,
+          "farm.3"
+        ],
+        [
+          18,
+          "town.3"
+        ],
+        [
+          354,
+          "farm.26"
+        ],
+        [
+          19,
+          "town.3"
+        ],
+        [
+          355,
+          "farm.26"
+        ],
+        [
+          20,
+          "farm.15"
+        ],
+        [
+          356,
+          "town.14"
+        ],
+        [
+          21,
+          "town.26"
+        ],
+        [
+          357,
+          "town.3"
+        ],
+        [
+          22,
+          "town.3"
+        ],
+        [
+          358,
+          "town.15"
+        ],
+        [
+          23,
+          "farm.26"
+        ],
+        [
+          359,
+          "farm.3"
+        ],
+        [
+          24,
+          "town.27"
+        ],
+        [
+          47,
+          "farm.26"
+        ],
+        [
+          48,
+          "town.26"
+        ],
+        [
+          71,
+          "farm.15"
+        ],
+        [
+          72,
+          "town.27"
+        ],
+        [
+          95,
+          "town.15"
+        ],
+        [
+          96,
+          "town.14"
+        ],
+        [
+          119,
+          "town.14"
+        ],
+        [
+          120,
+          "town.3"
+        ],
+        [
+          143,
+          "town.15"
+        ],
+        [
+          144,
+          "farm.26"
+        ],
+        [
+          167,
+          "farm.15"
+        ],
+        [
+          192,
+          "town.14"
+        ],
+        [
+          215,
+          "town.27"
+        ],
+        [
+          216,
+          "farm.26"
+        ],
+        [
+          239,
+          "town.27"
+        ],
+        [
+          240,
+          "town.26"
+        ],
+        [
+          263,
+          "town.2"
+        ],
+        [
+          264,
+          "farm.26"
+        ],
+        [
+          287,
+          "farm.3"
+        ],
+        [
+          288,
+          "town.26"
+        ],
+        [
+          311,
+          "town.15"
+        ],
+        [
+          312,
+          "farm.3"
+        ],
+        [
+          335,
+          "town.26"
+        ]
+      ],
+      "passage": [
+        [
+          0,
+          "block"
+        ],
+        [
+          1,
+          "block"
+        ],
+        [
+          2,
+          "block"
+        ],
+        [
+          3,
+          "block"
+        ],
+        [
+          4,
+          "block"
+        ],
+        [
+          5,
+          "block"
+        ],
+        [
+          6,
+          "block"
+        ],
+        [
+          7,
+          "block"
+        ],
+        [
+          8,
+          "block"
+        ],
+        [
+          9,
+          "block"
+        ],
+        [
+          10,
+          "block"
+        ],
+        [
+          11,
+          "block"
+        ],
+        [
+          13,
+          "block"
+        ],
+        [
+          14,
+          "block"
+        ],
+        [
+          15,
+          "block"
+        ],
+        [
+          16,
+          "block"
+        ],
+        [
+          17,
+          "block"
+        ],
+        [
+          18,
+          "block"
+        ],
+        [
+          19,
+          "block"
+        ],
+        [
+          20,
+          "block"
+        ],
+        [
+          21,
+          "block"
+        ],
+        [
+          22,
+          "block"
+        ],
+        [
+          23,
+          "block"
+        ],
+        [
+          24,
+          "block"
+        ],
+        [
+          47,
+          "block"
+        ],
+        [
+          48,
+          "block"
+        ],
+        [
+          50,
+          "block"
+        ],
+        [
+          51,
+          "block"
+        ],
+        [
+          52,
+          "block"
+        ],
+        [
+          53,
+          "block"
+        ],
+        [
+          54,
+          "block"
+        ],
+        [
+          55,
+          "block"
+        ],
+        [
+          68,
+          "block"
+        ],
+        [
+          69,
+          "block"
+        ],
+        [
+          70,
+          "block"
+        ],
+        [
+          71,
+          "block"
+        ],
+        [
+          72,
+          "block"
+        ],
+        [
+          74,
+          "block"
+        ],
+        [
+          79,
+          "block"
+        ],
+        [
+          92,
+          "block"
+        ],
+        [
+          94,
+          "block"
+        ],
+        [
+          95,
+          "block"
+        ],
+        [
+          96,
+          "block"
+        ],
+        [
+          98,
+          "block"
+        ],
+        [
+          103,
+          "block"
+        ],
+        [
+          116,
+          "block"
+        ],
+        [
+          118,
+          "block"
+        ],
+        [
+          119,
+          "block"
+        ],
+        [
+          120,
+          "block"
+        ],
+        [
+          122,
+          "block"
+        ],
+        [
+          123,
+          "block"
+        ],
+        [
+          125,
+          "block"
+        ],
+        [
+          126,
+          "block"
+        ],
+        [
+          127,
+          "block"
+        ],
+        [
+          143,
+          "block"
+        ],
+        [
+          144,
+          "block"
+        ],
+        [
+          155,
+          "block"
+        ],
+        [
+          167,
+          "block"
+        ],
+        [
+          192,
+          "block"
+        ],
+        [
+          215,
+          "block"
+        ],
+        [
+          216,
+          "block"
+        ],
+        [
+          239,
+          "block"
+        ],
+        [
+          240,
+          "block"
+        ],
+        [
+          260,
+          "block"
+        ],
+        [
+          261,
+          "block"
+        ],
+        [
+          262,
+          "block"
+        ],
+        [
+          263,
+          "block"
+        ],
+        [
+          264,
+          "block"
+        ],
+        [
+          273,
+          "block"
+        ],
+        [
+          274,
+          "block"
+        ],
+        [
+          275,
+          "block"
+        ],
+        [
+          277,
+          "block"
+        ],
+        [
+          278,
+          "block"
+        ],
+        [
+          284,
+          "block"
+        ],
+        [
+          285,
+          "block"
+        ],
+        [
+          286,
+          "block"
+        ],
+        [
+          287,
+          "block"
+        ],
+        [
+          288,
+          "block"
+        ],
+        [
+          297,
+          "block"
+        ],
+        [
+          302,
+          "block"
+        ],
+        [
+          308,
+          "block"
+        ],
+        [
+          309,
+          "block"
+        ],
+        [
+          310,
+          "block"
+        ],
+        [
+          311,
+          "block"
+        ],
+        [
+          312,
+          "block"
+        ],
+        [
+          321,
+          "block"
+        ],
+        [
+          322,
+          "block"
+        ],
+        [
+          323,
+          "block"
+        ],
+        [
+          324,
+          "block"
+        ],
+        [
+          325,
+          "block"
+        ],
+        [
+          326,
+          "block"
+        ],
+        [
+          332,
+          "block"
+        ],
+        [
+          333,
+          "block"
+        ],
+        [
+          334,
+          "block"
+        ],
+        [
+          335,
+          "block"
+        ],
+        [
+          336,
+          "block"
+        ],
+        [
+          337,
+          "block"
+        ],
+        [
+          338,
+          "block"
+        ],
+        [
+          339,
+          "block"
+        ],
+        [
+          340,
+          "block"
+        ],
+        [
+          341,
+          "block"
+        ],
+        [
+          342,
+          "block"
+        ],
+        [
+          343,
+          "block"
+        ],
+        [
+          344,
+          "block"
+        ],
+        [
+          345,
+          "block"
+        ],
+        [
+          346,
+          "block"
+        ],
+        [
+          347,
+          "block"
+        ],
+        [
+          348,
+          "block"
+        ],
+        [
+          349,
+          "block"
+        ],
+        [
+          350,
+          "block"
+        ],
+        [
+          351,
+          "block"
+        ],
+        [
+          352,
+          "block"
+        ],
+        [
+          353,
+          "block"
+        ],
+        [
+          354,
+          "block"
+        ],
+        [
+          355,
+          "block"
+        ],
+        [
+          356,
+          "block"
+        ],
+        [
+          357,
+          "block"
+        ],
+        [
+          358,
+          "block"
+        ],
+        [
+          359,
+          "block"
+        ]
+      ]
+    },
+    {
+      "id": "farm",
+      "name": "East-Slope Farm",
+      "width": 22,
+      "height": 14,
+      "sheets": [
+        "town",
+        "farm",
+        "dun",
+        "custom"
+      ],
+      "ground": [
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.41",
+        "town.0",
+        "farm.0",
+        "town.0",
+        "town.0",
+        "farm.1",
+        "town.0",
+        "town.0",
+        "dun.30",
+        "dun.30",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.41",
+        "town.0",
+        "farm.24",
+        "town.0",
+        "town.0",
+        "farm.24",
+        "town.0",
+        "town.0",
+        "dun.30",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.40",
+        "town.0",
+        "farm.24",
+        "town.0",
+        "town.0",
+        "farm.24",
+        "town.0",
+        "town.1",
+        "farm.25",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.42",
+        "town.1",
+        "farm.24",
+        "custom.0",
+        "custom.0",
+        "farm.24",
+        "town.0",
+        "town.0",
+        "farm.25",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "custom.0",
+        "custom.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.42",
+        "custom.0",
+        "farm.12",
+        "town.1",
+        "town.0",
+        "farm.13",
+        "town.0",
+        "town.0",
+        "farm.12",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.39",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.1",
+        "town.39",
+        "town.40",
+        "town.39",
+        "town.42",
+        "town.41",
+        "town.39",
+        "town.39",
+        "town.41",
+        "town.41",
+        "town.42",
+        "town.42",
+        "town.41",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.42",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.42",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "custom.0",
+        "custom.0",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "custom.0",
+        "custom.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.88",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0"
+      ],
+      "events": [
+        {
+          "id": "farm-return",
+          "name": "Path to the Hamlet",
+          "x": 0,
+          "y": 7,
+          "pages": [
+            {
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "hub",
+                  "x": 22,
+                  "y": 7,
+                  "dir": "left"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "farmer",
+          "name": "East-Slope Farmer",
+          "x": 10,
+          "y": 8,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "farmer",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "FARMER: A letter? Aye — but first,",
+                    "three hay bundles from the field edge,",
+                    "or the sheep won't follow me home."
+                  ]
+                },
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "item",
+                    "id": "letter-farmer",
+                    "count": 1
+                  },
+                  "then": [
+                    {
+                      "op": "choices",
+                      "prompt": "Open the pen with three hay?",
+                      "options": [
+                        {
+                          "text": "Herd them home",
+                          "commands": [
+                            {
+                              "op": "if",
+                              "if": {
+                                "kind": "item",
+                                "id": "hay",
+                                "count": 3
+                              },
+                              "then": [
+                                {
+                                  "op": "item",
+                                  "item": "hay",
+                                  "set": "sub",
+                                  "count": 3
+                                },
+                                {
+                                  "op": "item",
+                                  "item": "letter-farmer",
+                                  "set": "sub",
+                                  "count": 1
+                                },
+                                {
+                                  "op": "gold",
+                                  "set": "add",
+                                  "amount": 10
+                                },
+                                {
+                                  "op": "switch",
+                                  "id": "sheep-herd",
+                                  "value": true
+                                },
+                                {
+                                  "op": "switch",
+                                  "id": "farmer-done",
+                                  "value": true
+                                },
+                                {
+                                  "op": "se",
+                                  "name": "receive"
+                                },
+                                {
+                                  "op": "text",
+                                  "lines": [
+                                    "FARMER: Watch — they know the way.",
+                                    "Ten gold for the route, courier."
+                                  ]
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": "text",
+                                  "lines": [
+                                    "FARMER: Three dry bundles, by the field",
+                                    "edge. Rain swells the rest."
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Later",
+                          "commands": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "FARMER: They will wait. Hay won't."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "FARMER: Post's business, is it? I'll take",
+                        "my letter once the sheep are settled."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "farmer-done"
+              },
+              "trigger": "action",
+              "sprite": "farmer",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "FARMER: Sheep are quiet, letter is read.",
+                    "Safe on the rocks up high."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "sheep",
+          "name": "Stray Sheep",
+          "x": 10,
+          "y": 10,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "sheep",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "Baa. It stares at the open hillside."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "sheep-herd"
+              },
+              "trigger": "autorun",
+              "sprite": "sheep",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "wait",
+                  "seconds": 0.4
+                },
+                {
+                  "op": "moveRoute",
+                  "target": "this",
+                  "wait": true,
+                  "route": {
+                    "steps": [
+                      "moveLeft",
+                      "moveLeft",
+                      "moveLeft",
+                      "moveDown",
+                      "moveLeft",
+                      "moveLeft",
+                      "moveLeft"
+                    ],
+                    "repeat": false,
+                    "skippable": false
+                  }
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "exit"
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "pen-sheep",
+          "name": "Penned Sheep",
+          "x": 3,
+          "y": 11,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            },
+            {
+              "condition": {
+                "switch": "sheep-herd"
+              },
+              "trigger": "action",
+              "sprite": "sheep",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "Baa. Warm, dry, and home."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hay-1",
+          "name": "Dry Hay",
+          "x": 13,
+          "y": 6,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "hay",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "item",
+                  "item": "hay",
+                  "set": "add",
+                  "count": 1
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "Bound a bundle of dry hay."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "hay-2",
+          "name": "Dry Hay",
+          "x": 16,
+          "y": 6,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "hay",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "item",
+                  "item": "hay",
+                  "set": "add",
+                  "count": 1
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "Bound a bundle of dry hay."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "hay-3",
+          "name": "Dry Hay",
+          "x": 19,
+          "y": 6,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "hay",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "item",
+                  "item": "hay",
+                  "set": "add",
+                  "count": 1
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "Bound a bundle of dry hay."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "parcel-farm-1",
+          "name": "Lost Parcel",
+          "x": 13,
+          "y": 7,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "parcel",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "common",
+                  "id": "ce-pick-parcel"
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "A damp parcel with the shop's seal.",
+                    "You tuck it into the bag."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "parcel-farm-2",
+          "name": "Lost Parcel",
+          "x": 19,
+          "y": 8,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "parcel",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "common",
+                  "id": "ce-pick-parcel"
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "A damp parcel with the shop's seal.",
+                    "You tuck it into the bag."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        }
+      ],
+      "upper": [
+        [
+          58,
+          "farm.8"
+        ],
+        [
+          102,
+          "farm.8"
+        ],
+        [
+          61,
+          "farm.17"
+        ],
+        [
+          105,
+          "farm.20"
+        ],
+        [
+          64,
+          "farm.29"
+        ],
+        [
+          108,
+          "farm.31"
+        ],
+        [
+          56,
+          "farm.83"
+        ],
+        [
+          53,
+          "farm.83"
+        ],
+        [
+          119,
+          "farm.54"
+        ],
+        [
+          213,
+          "town.44"
+        ],
+        [
+          214,
+          "town.44"
+        ],
+        [
+          215,
+          "town.44"
+        ],
+        [
+          216,
+          "town.44"
+        ],
+        [
+          217,
+          "town.44"
+        ],
+        [
+          218,
+          "town.44"
+        ],
+        [
+          279,
+          "town.44"
+        ],
+        [
+          280,
+          "town.44"
+        ],
+        [
+          282,
+          "town.44"
+        ],
+        [
+          283,
+          "town.44"
+        ],
+        [
+          284,
+          "town.44"
+        ],
+        [
+          235,
+          "town.46"
+        ],
+        [
+          240,
+          "town.47"
+        ],
+        [
+          257,
+          "town.46"
+        ],
+        [
+          262,
+          "town.47"
+        ],
+        [
+          215,
+          "town.93"
+        ],
+        [
+          200,
+          "town.68"
+        ],
+        [
+          201,
+          "town.68"
+        ],
+        [
+          202,
+          "town.68"
+        ],
+        [
+          203,
+          "town.68"
+        ],
+        [
+          204,
+          "town.68"
+        ],
+        [
+          222,
+          "town.69"
+        ],
+        [
+          226,
+          "town.71"
+        ],
+        [
+          248,
+          "town.85"
+        ],
+        [
+          244,
+          "town.69"
+        ],
+        [
+          266,
+          "town.68"
+        ],
+        [
+          267,
+          "town.68"
+        ],
+        [
+          268,
+          "town.68"
+        ],
+        [
+          269,
+          "town.68"
+        ],
+        [
+          270,
+          "town.71"
+        ],
+        [
+          41,
+          "town.3"
+        ],
+        [
+          63,
+          "town.3"
+        ],
+        [
+          86,
+          "town.3"
+        ],
+        [
+          65,
+          "town.3"
+        ],
+        [
+          87,
+          "town.3"
+        ],
+        [
+          85,
+          "town.3"
+        ],
+        [
+          250,
+          "farm.122"
+        ],
+        [
+          184,
+          "farm.123"
+        ],
+        [
+          188,
+          "farm.85"
+        ],
+        [
+          211,
+          "farm.74"
+        ],
+        [
+          156,
+          "farm.78"
+        ],
+        [
+          169,
+          "farm.96"
+        ],
+        [
+          180,
+          "town.29"
+        ],
+        [
+          0,
+          "town.3"
+        ],
+        [
+          286,
+          "town.15"
+        ],
+        [
+          1,
+          "farm.15"
+        ],
+        [
+          287,
+          "farm.15"
+        ],
+        [
+          2,
+          "town.15"
+        ],
+        [
+          288,
+          "town.14"
+        ],
+        [
+          3,
+          "town.14"
+        ],
+        [
+          289,
+          "town.2"
+        ],
+        [
+          4,
+          "town.3"
+        ],
+        [
+          290,
+          "farm.15"
+        ],
+        [
+          5,
+          "farm.3"
+        ],
+        [
+          291,
+          "farm.26"
+        ],
+        [
+          6,
+          "farm.3"
+        ],
+        [
+          292,
+          "farm.26"
+        ],
+        [
+          7,
+          "town.2"
+        ],
+        [
+          293,
+          "town.14"
+        ],
+        [
+          8,
+          "town.2"
+        ],
+        [
+          294,
+          "town.15"
+        ],
+        [
+          9,
+          "town.15"
+        ],
+        [
+          295,
+          "town.15"
+        ],
+        [
+          10,
+          "town.26"
+        ],
+        [
+          296,
+          "town.3"
+        ],
+        [
+          11,
+          "town.26"
+        ],
+        [
+          297,
+          "town.26"
+        ],
+        [
+          12,
+          "town.15"
+        ],
+        [
+          298,
+          "town.3"
+        ],
+        [
+          13,
+          "town.3"
+        ],
+        [
+          299,
+          "town.2"
+        ],
+        [
+          14,
+          "town.15"
+        ],
+        [
+          300,
+          "town.14"
+        ],
+        [
+          15,
+          "town.3"
+        ],
+        [
+          301,
+          "town.26"
+        ],
+        [
+          16,
+          "town.26"
+        ],
+        [
+          302,
+          "town.15"
+        ],
+        [
+          17,
+          "town.14"
+        ],
+        [
+          303,
+          "town.3"
+        ],
+        [
+          18,
+          "town.14"
+        ],
+        [
+          304,
+          "town.26"
+        ],
+        [
+          19,
+          "farm.15"
+        ],
+        [
+          305,
+          "town.2"
+        ],
+        [
+          20,
+          "town.3"
+        ],
+        [
+          306,
+          "town.3"
+        ],
+        [
+          21,
+          "town.15"
+        ],
+        [
+          307,
+          "farm.26"
+        ],
+        [
+          22,
+          "town.2"
+        ],
+        [
+          43,
+          "town.2"
+        ],
+        [
+          44,
+          "town.3"
+        ],
+        [
+          65,
+          "town.2"
+        ],
+        [
+          66,
+          "farm.3"
+        ],
+        [
+          87,
+          "town.27"
+        ],
+        [
+          88,
+          "town.26"
+        ],
+        [
+          109,
+          "town.3"
+        ],
+        [
+          110,
+          "town.15"
+        ],
+        [
+          131,
+          "farm.15"
+        ],
+        [
+          132,
+          "farm.15"
+        ],
+        [
+          153,
+          "farm.26"
+        ],
+        [
+          175,
+          "town.2"
+        ],
+        [
+          176,
+          "farm.26"
+        ],
+        [
+          197,
+          "farm.3"
+        ],
+        [
+          198,
+          "farm.3"
+        ],
+        [
+          219,
+          "farm.3"
+        ],
+        [
+          220,
+          "farm.3"
+        ],
+        [
+          241,
+          "town.15"
+        ],
+        [
+          242,
+          "town.14"
+        ],
+        [
+          263,
+          "farm.3"
+        ],
+        [
+          264,
+          "town.26"
+        ],
+        [
+          285,
+          "farm.15"
+        ]
+      ],
+      "passage": [
+        [
+          0,
+          "block"
+        ],
+        [
+          1,
+          "block"
+        ],
+        [
+          2,
+          "block"
+        ],
+        [
+          3,
+          "block"
+        ],
+        [
+          4,
+          "block"
+        ],
+        [
+          5,
+          "block"
+        ],
+        [
+          6,
+          "block"
+        ],
+        [
+          7,
+          "block"
+        ],
+        [
+          8,
+          "block"
+        ],
+        [
+          9,
+          "block"
+        ],
+        [
+          10,
+          "block"
+        ],
+        [
+          11,
+          "block"
+        ],
+        [
+          12,
+          "block"
+        ],
+        [
+          13,
+          "block"
+        ],
+        [
+          14,
+          "block"
+        ],
+        [
+          15,
+          "block"
+        ],
+        [
+          16,
+          "block"
+        ],
+        [
+          17,
+          "block"
+        ],
+        [
+          18,
+          "block"
+        ],
+        [
+          19,
+          "block"
+        ],
+        [
+          20,
+          "block"
+        ],
+        [
+          21,
+          "block"
+        ],
+        [
+          22,
+          "block"
+        ],
+        [
+          41,
+          "block"
+        ],
+        [
+          42,
+          "block"
+        ],
+        [
+          43,
+          "block"
+        ],
+        [
+          44,
+          "block"
+        ],
+        [
+          63,
+          "block"
+        ],
+        [
+          64,
+          "block"
+        ],
+        [
+          65,
+          "block"
+        ],
+        [
+          66,
+          "block"
+        ],
+        [
+          85,
+          "block"
+        ],
+        [
+          86,
+          "block"
+        ],
+        [
+          87,
+          "block"
+        ],
+        [
+          88,
+          "block"
+        ],
+        [
+          109,
+          "block"
+        ],
+        [
+          110,
+          "block"
+        ],
+        [
+          131,
+          "block"
+        ],
+        [
+          132,
+          "block"
+        ],
+        [
+          153,
+          "block"
+        ],
+        [
+          175,
+          "block"
+        ],
+        [
+          176,
+          "block"
+        ],
+        [
+          197,
+          "block"
+        ],
+        [
+          198,
+          "block"
+        ],
+        [
+          200,
+          "block"
+        ],
+        [
+          201,
+          "block"
+        ],
+        [
+          202,
+          "block"
+        ],
+        [
+          203,
+          "block"
+        ],
+        [
+          204,
+          "block"
+        ],
+        [
+          213,
+          "block"
+        ],
+        [
+          214,
+          "block"
+        ],
+        [
+          215,
+          "block"
+        ],
+        [
+          216,
+          "block"
+        ],
+        [
+          217,
+          "block"
+        ],
+        [
+          218,
+          "block"
+        ],
+        [
+          219,
+          "block"
+        ],
+        [
+          220,
+          "block"
+        ],
+        [
+          222,
+          "block"
+        ],
+        [
+          226,
+          "block"
+        ],
+        [
+          235,
+          "block"
+        ],
+        [
+          240,
+          "block"
+        ],
+        [
+          241,
+          "block"
+        ],
+        [
+          242,
+          "block"
+        ],
+        [
+          244,
+          "block"
+        ],
+        [
+          257,
+          "block"
+        ],
+        [
+          262,
+          "block"
+        ],
+        [
+          263,
+          "block"
+        ],
+        [
+          264,
+          "block"
+        ],
+        [
+          266,
+          "block"
+        ],
+        [
+          267,
+          "block"
+        ],
+        [
+          268,
+          "block"
+        ],
+        [
+          269,
+          "block"
+        ],
+        [
+          270,
+          "block"
+        ],
+        [
+          279,
+          "block"
+        ],
+        [
+          280,
+          "block"
+        ],
+        [
+          282,
+          "block"
+        ],
+        [
+          283,
+          "block"
+        ],
+        [
+          284,
+          "block"
+        ],
+        [
+          285,
+          "block"
+        ],
+        [
+          286,
+          "block"
+        ],
+        [
+          287,
+          "block"
+        ],
+        [
+          288,
+          "block"
+        ],
+        [
+          289,
+          "block"
+        ],
+        [
+          290,
+          "block"
+        ],
+        [
+          291,
+          "block"
+        ],
+        [
+          292,
+          "block"
+        ],
+        [
+          293,
+          "block"
+        ],
+        [
+          294,
+          "block"
+        ],
+        [
+          295,
+          "block"
+        ],
+        [
+          296,
+          "block"
+        ],
+        [
+          297,
+          "block"
+        ],
+        [
+          298,
+          "block"
+        ],
+        [
+          299,
+          "block"
+        ],
+        [
+          300,
+          "block"
+        ],
+        [
+          301,
+          "block"
+        ],
+        [
+          302,
+          "block"
+        ],
+        [
+          303,
+          "block"
+        ],
+        [
+          304,
+          "block"
+        ],
+        [
+          305,
+          "block"
+        ],
+        [
+          306,
+          "block"
+        ],
+        [
+          307,
+          "block"
+        ]
+      ]
+    },
+    {
+      "id": "mine",
+      "name": "West-Slope Mine",
+      "width": 16,
+      "height": 12,
+      "sheets": [
+        "town",
+        "farm",
+        "dun",
+        "custom"
+      ],
+      "ground": [
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "custom.0",
+        "custom.1",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "dun.48",
+        "dun.48",
+        "dun.48",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.1",
+        "town.1",
+        "dun.48",
+        "dun.48",
+        "dun.48",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "dun.30",
+        "custom.1",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.41",
+        "town.40",
+        "town.39",
+        "town.42",
+        "town.80",
+        "town.80",
+        "town.41",
+        "town.42",
+        "town.41",
+        "town.42",
+        "town.41",
+        "town.42",
+        "custom.0",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "dun.24",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "dun.24",
+        "town.1",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "dun.25",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.0"
+      ],
+      "events": [
+        {
+          "id": "mine-return",
+          "name": "Path to the Hamlet",
+          "x": 15,
+          "y": 6,
+          "pages": [
+            {
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "hub",
+                  "x": 1,
+                  "y": 7,
+                  "dir": "right"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "miner",
+          "name": "Fevered Miner",
+          "x": 3,
+          "y": 2,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "miner",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "MINER: That fever... the rain bit deep.",
+                    "Hot soup would put me right. The",
+                    "general store keeps it simmering."
+                  ]
+                },
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "item",
+                    "id": "letter-miner",
+                    "count": 1
+                  },
+                  "then": [
+                    {
+                      "op": "choices",
+                      "prompt": "Offer something hot?",
+                      "options": [
+                        {
+                          "text": "Give hot soup",
+                          "commands": [
+                            {
+                              "op": "if",
+                              "if": {
+                                "kind": "item",
+                                "id": "soup",
+                                "count": 1
+                              },
+                              "then": [
+                                {
+                                  "op": "item",
+                                  "item": "soup",
+                                  "set": "sub",
+                                  "count": 1
+                                },
+                                {
+                                  "op": "item",
+                                  "item": "letter-miner",
+                                  "set": "sub",
+                                  "count": 1
+                                },
+                                {
+                                  "op": "switch",
+                                  "id": "miner-done",
+                                  "value": true
+                                },
+                                {
+                                  "op": "se",
+                                  "name": "receive"
+                                },
+                                {
+                                  "op": "text",
+                                  "lines": [
+                                    "MINER: Steam right to the bones. Here,",
+                                    "your letter — stamped and read. Go,",
+                                    "the trail worsens past the pines."
+                                  ]
+                                }
+                              ],
+                              "else": [
+                                {
+                                  "op": "text",
+                                  "lines": [
+                                    "MINER: Soup from the hamlet store.",
+                                    "Fifteen gold, worth every copper."
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "text": "Rest now",
+                          "commands": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "MINER: I'll be here. The mountain",
+                                "is in no hurry today."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "MINER: Post can wait till my hands stop",
+                        "shaking. Soup first, letters after."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "miner-done"
+              },
+              "trigger": "action",
+              "sprite": "miner",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "MINER: Warm again. The pine bridge is",
+                    "out, you know. The hermit can help."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "med-window",
+          "name": "Apothecary Window",
+          "x": 5,
+          "y": 2,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "The apothecary's window is shuttered.",
+                    "A chalk note: SOUP, HOT, OFTEN."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mine-sign",
+          "name": "Mine Sign",
+          "x": 14,
+          "y": 5,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "sign",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "<West-Slope Mine>",
+                    "The ore waits. The fever doesn't."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "parcel-mine",
+          "name": "Lost Parcel",
+          "x": 6,
+          "y": 9,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "parcel",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "common",
+                  "id": "ce-pick-parcel"
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "A parcel wedged behind the cart",
+                    "rails. Into the bag it goes."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        }
+      ],
+      "upper": [
+        [
+          17,
+          "dun.28"
+        ],
+        [
+          18,
+          "dun.28"
+        ],
+        [
+          19,
+          "dun.28"
+        ],
+        [
+          20,
+          "dun.28"
+        ],
+        [
+          21,
+          "dun.28"
+        ],
+        [
+          33,
+          "dun.28"
+        ],
+        [
+          37,
+          "dun.28"
+        ],
+        [
+          49,
+          "dun.28"
+        ],
+        [
+          53,
+          "dun.28"
+        ],
+        [
+          134,
+          "dun.69"
+        ],
+        [
+          135,
+          "dun.69"
+        ],
+        [
+          137,
+          "dun.82"
+        ],
+        [
+          155,
+          "dun.89"
+        ],
+        [
+          156,
+          "dun.89"
+        ],
+        [
+          149,
+          "town.112"
+        ],
+        [
+          173,
+          "dun.77"
+        ],
+        [
+          56,
+          "dun.54"
+        ],
+        [
+          78,
+          "town.30"
+        ],
+        [
+          0,
+          "farm.26"
+        ],
+        [
+          176,
+          "town.14"
+        ],
+        [
+          1,
+          "farm.26"
+        ],
+        [
+          177,
+          "town.3"
+        ],
+        [
+          2,
+          "town.15"
+        ],
+        [
+          178,
+          "town.14"
+        ],
+        [
+          3,
+          "town.26"
+        ],
+        [
+          179,
+          "farm.26"
+        ],
+        [
+          4,
+          "town.15"
+        ],
+        [
+          180,
+          "farm.3"
+        ],
+        [
+          5,
+          "town.27"
+        ],
+        [
+          181,
+          "town.2"
+        ],
+        [
+          6,
+          "farm.3"
+        ],
+        [
+          182,
+          "farm.26"
+        ],
+        [
+          7,
+          "town.3"
+        ],
+        [
+          183,
+          "farm.3"
+        ],
+        [
+          8,
+          "farm.26"
+        ],
+        [
+          184,
+          "town.3"
+        ],
+        [
+          9,
+          "farm.3"
+        ],
+        [
+          185,
+          "town.3"
+        ],
+        [
+          10,
+          "town.15"
+        ],
+        [
+          186,
+          "town.27"
+        ],
+        [
+          11,
+          "town.27"
+        ],
+        [
+          187,
+          "town.26"
+        ],
+        [
+          12,
+          "farm.3"
+        ],
+        [
+          188,
+          "town.3"
+        ],
+        [
+          13,
+          "farm.26"
+        ],
+        [
+          189,
+          "farm.3"
+        ],
+        [
+          14,
+          "farm.15"
+        ],
+        [
+          190,
+          "farm.26"
+        ],
+        [
+          15,
+          "town.15"
+        ],
+        [
+          191,
+          "farm.15"
+        ],
+        [
+          16,
+          "farm.3"
+        ],
+        [
+          31,
+          "town.15"
+        ],
+        [
+          32,
+          "town.14"
+        ],
+        [
+          47,
+          "town.14"
+        ],
+        [
+          48,
+          "farm.26"
+        ],
+        [
+          63,
+          "town.14"
+        ],
+        [
+          64,
+          "town.15"
+        ],
+        [
+          79,
+          "town.15"
+        ],
+        [
+          80,
+          "farm.15"
+        ],
+        [
+          95,
+          "farm.3"
+        ],
+        [
+          96,
+          "town.26"
+        ],
+        [
+          112,
+          "town.26"
+        ],
+        [
+          127,
+          "town.3"
+        ],
+        [
+          128,
+          "farm.15"
+        ],
+        [
+          143,
+          "town.3"
+        ],
+        [
+          144,
+          "town.14"
+        ],
+        [
+          159,
+          "town.14"
+        ],
+        [
+          160,
+          "farm.3"
+        ],
+        [
+          175,
+          "town.26"
+        ]
+      ],
+      "passage": [
+        [
+          0,
+          "block"
+        ],
+        [
+          1,
+          "block"
+        ],
+        [
+          2,
+          "block"
+        ],
+        [
+          3,
+          "block"
+        ],
+        [
+          4,
+          "block"
+        ],
+        [
+          5,
+          "block"
+        ],
+        [
+          6,
+          "block"
+        ],
+        [
+          7,
+          "block"
+        ],
+        [
+          8,
+          "block"
+        ],
+        [
+          9,
+          "block"
+        ],
+        [
+          10,
+          "block"
+        ],
+        [
+          11,
+          "block"
+        ],
+        [
+          12,
+          "block"
+        ],
+        [
+          13,
+          "block"
+        ],
+        [
+          14,
+          "block"
+        ],
+        [
+          15,
+          "block"
+        ],
+        [
+          16,
+          "block"
+        ],
+        [
+          17,
+          "block"
+        ],
+        [
+          18,
+          "block"
+        ],
+        [
+          19,
+          "block"
+        ],
+        [
+          20,
+          "block"
+        ],
+        [
+          21,
+          "block"
+        ],
+        [
+          31,
+          "block"
+        ],
+        [
+          32,
+          "block"
+        ],
+        [
+          33,
+          "block"
+        ],
+        [
+          37,
+          "block"
+        ],
+        [
+          47,
+          "block"
+        ],
+        [
+          48,
+          "block"
+        ],
+        [
+          49,
+          "block"
+        ],
+        [
+          53,
+          "block"
+        ],
+        [
+          63,
+          "block"
+        ],
+        [
+          64,
+          "block"
+        ],
+        [
+          67,
+          "pass"
+        ],
+        [
+          79,
+          "block"
+        ],
+        [
+          80,
+          "block"
+        ],
+        [
+          95,
+          "block"
+        ],
+        [
+          96,
+          "block"
+        ],
+        [
+          112,
+          "block"
+        ],
+        [
+          127,
+          "block"
+        ],
+        [
+          128,
+          "block"
+        ],
+        [
+          143,
+          "block"
+        ],
+        [
+          144,
+          "block"
+        ],
+        [
+          159,
+          "block"
+        ],
+        [
+          160,
+          "block"
+        ],
+        [
+          175,
+          "block"
+        ],
+        [
+          176,
+          "block"
+        ],
+        [
+          177,
+          "block"
+        ],
+        [
+          178,
+          "block"
+        ],
+        [
+          179,
+          "block"
+        ],
+        [
+          180,
+          "block"
+        ],
+        [
+          181,
+          "block"
+        ],
+        [
+          182,
+          "block"
+        ],
+        [
+          183,
+          "block"
+        ],
+        [
+          184,
+          "block"
+        ],
+        [
+          185,
+          "block"
+        ],
+        [
+          186,
+          "block"
+        ],
+        [
+          187,
+          "block"
+        ],
+        [
+          188,
+          "block"
+        ],
+        [
+          189,
+          "block"
+        ],
+        [
+          190,
+          "block"
+        ],
+        [
+          191,
+          "block"
+        ]
+      ]
+    },
+    {
+      "id": "pine",
+      "name": "Pine Trail",
+      "width": 18,
+      "height": 12,
+      "sheets": [
+        "town",
+        "farm",
+        "dun",
+        "custom"
+      ],
+      "ground": [
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.80",
+        "town.80",
+        "town.80",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.80",
+        "town.80",
+        "town.80",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0"
+      ],
+      "events": [
+        {
+          "id": "pine-return",
+          "name": "Path to the Hamlet",
+          "x": 9,
+          "y": 11,
+          "pages": [
+            {
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "hub",
+                  "x": 12,
+                  "y": 1,
+                  "dir": "down"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hermit",
+          "name": "Trail Hermit",
+          "x": 4,
+          "y": 3,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "hermit",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "HERMIT: Bridge north is out. I can cut",
+                    "new planks, but my tinder is soaked.",
+                    "One box of matches and I'll work."
+                  ]
+                },
+                {
+                  "op": "choices",
+                  "prompt": "Help repair the bridge?",
+                  "options": [
+                    {
+                      "text": "Give matches",
+                      "commands": [
+                        {
+                          "op": "if",
+                          "if": {
+                            "kind": "item",
+                            "id": "matches",
+                            "count": 1
+                          },
+                          "then": [
+                            {
+                              "op": "item",
+                              "item": "matches",
+                              "set": "sub",
+                              "count": 1
+                            },
+                            {
+                              "op": "switch",
+                              "id": "fire-lit",
+                              "value": true
+                            },
+                            {
+                              "op": "switch",
+                              "id": "bridge-fixed",
+                              "value": true
+                            },
+                            {
+                              "op": "se",
+                              "name": "unlock"
+                            },
+                            {
+                              "op": "text",
+                              "lines": [
+                                "HERMIT: Smoke, then flame. Listen —",
+                                "planks already falling into place.",
+                                "The lighthouse road is yours."
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "HERMIT: The hamlet store sells them,",
+                                "five gold the box."
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "text": "Not yet",
+                      "commands": [
+                        {
+                          "op": "text",
+                          "lines": [
+                            "HERMIT: Rain waits. The bridge waits."
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "bridge-fixed"
+              },
+              "trigger": "action",
+              "sprite": "hermit",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "HERMIT: Cross anywhere on the planks.",
+                    "Tell the keeper the mountain still",
+                    "remembers its lights."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "campfire",
+          "name": "Hermit's Campfire",
+          "x": 4,
+          "y": 5,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "fire-off",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "Cold ash and wet kindling."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "fire-lit"
+              },
+              "trigger": "action",
+              "sprite": "fire-lit",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "The fire pops, dry and warm. Somewhere",
+                    "north, new planks settle on the bridge."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "mushroom-1",
+          "name": "Woodland Mushrooms",
+          "x": 6,
+          "y": 7,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "mushrooms",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "item",
+                  "item": "mushroom",
+                  "set": "add",
+                  "count": 1
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "Picked woodland mushrooms. The shop",
+                    "buys these on wet days."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "mushroom-2",
+          "name": "Woodland Mushrooms",
+          "x": 13,
+          "y": 3,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "mushrooms",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "item",
+                  "item": "mushroom",
+                  "set": "add",
+                  "count": 1
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "Picked woodland mushrooms. The shop",
+                    "buys these on wet days."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "parcel-pine",
+          "name": "Lost Parcel",
+          "x": 13,
+          "y": 8,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "parcel",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "common",
+                  "id": "ce-pick-parcel"
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "A parcel hung on a low pine bough.",
+                    "The bag is getting full."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "loose-plank",
+          "name": "Loose Plank",
+          "x": 8,
+          "y": 1,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "A loose plank rattles over the gap.",
+                    "You kick it into place."
+                  ]
+                },
+                {
+                  "op": "erase"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "bridge",
+          "name": "Broken Bridge",
+          "x": 10,
+          "y": 0,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": null,
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "The bridge is gone — wet timber and air",
+                    "between here and the lighthouse."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "bridge-fixed"
+              },
+              "trigger": "playerTouch",
+              "sprite": null,
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "light",
+                  "x": 8,
+                  "y": 12,
+                  "dir": "up",
+                  "fade": 0.4
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "upper": [
+        [
+          1,
+          "town.3"
+        ],
+        [
+          2,
+          "town.26"
+        ],
+        [
+          3,
+          "farm.26"
+        ],
+        [
+          4,
+          "town.3"
+        ],
+        [
+          5,
+          "farm.3"
+        ],
+        [
+          6,
+          "town.15"
+        ],
+        [
+          7,
+          "town.3"
+        ],
+        [
+          8,
+          "farm.3"
+        ],
+        [
+          12,
+          "town.26"
+        ],
+        [
+          13,
+          "farm.3"
+        ],
+        [
+          14,
+          "town.26"
+        ],
+        [
+          15,
+          "farm.3"
+        ],
+        [
+          16,
+          "town.26"
+        ],
+        [
+          19,
+          "town.15"
+        ],
+        [
+          20,
+          "town.2"
+        ],
+        [
+          21,
+          "town.26"
+        ],
+        [
+          22,
+          "town.27"
+        ],
+        [
+          23,
+          "farm.26"
+        ],
+        [
+          24,
+          "town.27"
+        ],
+        [
+          25,
+          "town.15"
+        ],
+        [
+          26,
+          "town.15"
+        ],
+        [
+          30,
+          "town.2"
+        ],
+        [
+          31,
+          "town.26"
+        ],
+        [
+          32,
+          "town.15"
+        ],
+        [
+          33,
+          "town.15"
+        ],
+        [
+          34,
+          "farm.26"
+        ],
+        [
+          37,
+          "town.3"
+        ],
+        [
+          38,
+          "town.27"
+        ],
+        [
+          39,
+          "town.15"
+        ],
+        [
+          50,
+          "town.27"
+        ],
+        [
+          51,
+          "town.15"
+        ],
+        [
+          52,
+          "farm.3"
+        ],
+        [
+          55,
+          "town.27"
+        ],
+        [
+          56,
+          "town.26"
+        ],
+        [
+          68,
+          "town.15"
+        ],
+        [
+          69,
+          "town.3"
+        ],
+        [
+          70,
+          "town.3"
+        ],
+        [
+          73,
+          "town.27"
+        ],
+        [
+          74,
+          "farm.3"
+        ],
+        [
+          86,
+          "farm.26"
+        ],
+        [
+          87,
+          "town.27"
+        ],
+        [
+          88,
+          "farm.26"
+        ],
+        [
+          91,
+          "town.15"
+        ],
+        [
+          92,
+          "town.26"
+        ],
+        [
+          97,
+          "town.27"
+        ],
+        [
+          98,
+          "town.27"
+        ],
+        [
+          99,
+          "town.15"
+        ],
+        [
+          100,
+          "town.26"
+        ],
+        [
+          101,
+          "farm.3"
+        ],
+        [
+          102,
+          "town.15"
+        ],
+        [
+          103,
+          "town.2"
+        ],
+        [
+          104,
+          "town.26"
+        ],
+        [
+          105,
+          "farm.3"
+        ],
+        [
+          106,
+          "farm.26"
+        ],
+        [
+          109,
+          "town.27"
+        ],
+        [
+          110,
+          "town.2"
+        ],
+        [
+          111,
+          "town.26"
+        ],
+        [
+          115,
+          "town.2"
+        ],
+        [
+          116,
+          "town.27"
+        ],
+        [
+          117,
+          "town.2"
+        ],
+        [
+          118,
+          "town.27"
+        ],
+        [
+          119,
+          "town.26"
+        ],
+        [
+          120,
+          "farm.3"
+        ],
+        [
+          121,
+          "farm.26"
+        ],
+        [
+          122,
+          "town.15"
+        ],
+        [
+          123,
+          "town.27"
+        ],
+        [
+          124,
+          "town.3"
+        ],
+        [
+          127,
+          "town.2"
+        ],
+        [
+          128,
+          "town.26"
+        ],
+        [
+          129,
+          "town.15"
+        ],
+        [
+          140,
+          "town.15"
+        ],
+        [
+          141,
+          "farm.26"
+        ],
+        [
+          142,
+          "town.26"
+        ],
+        [
+          145,
+          "farm.3"
+        ],
+        [
+          146,
+          "town.26"
+        ],
+        [
+          147,
+          "town.3"
+        ],
+        [
+          158,
+          "town.26"
+        ],
+        [
+          159,
+          "town.15"
+        ],
+        [
+          160,
+          "town.15"
+        ],
+        [
+          163,
+          "farm.3"
+        ],
+        [
+          164,
+          "town.26"
+        ],
+        [
+          165,
+          "farm.3"
+        ],
+        [
+          166,
+          "town.27"
+        ],
+        [
+          176,
+          "farm.3"
+        ],
+        [
+          177,
+          "town.26"
+        ],
+        [
+          178,
+          "town.3"
+        ],
+        [
+          181,
+          "farm.3"
+        ],
+        [
+          182,
+          "town.26"
+        ],
+        [
+          183,
+          "town.15"
+        ],
+        [
+          184,
+          "town.26"
+        ],
+        [
+          185,
+          "town.15"
+        ],
+        [
+          186,
+          "town.27"
+        ],
+        [
+          187,
+          "town.27"
+        ],
+        [
+          191,
+          "town.15"
+        ],
+        [
+          192,
+          "town.27"
+        ],
+        [
+          193,
+          "farm.26"
+        ],
+        [
+          194,
+          "town.15"
+        ],
+        [
+          195,
+          "town.27"
+        ],
+        [
+          196,
+          "town.26"
+        ],
+        [
+          61,
+          "town.29"
+        ],
+        [
+          102,
+          "town.17"
+        ],
+        [
+          0,
+          "farm.26"
+        ],
+        [
+          198,
+          "farm.15"
+        ],
+        [
+          1,
+          "town.15"
+        ],
+        [
+          199,
+          "farm.15"
+        ],
+        [
+          2,
+          "town.14"
+        ],
+        [
+          200,
+          "town.26"
+        ],
+        [
+          3,
+          "town.26"
+        ],
+        [
+          201,
+          "farm.26"
+        ],
+        [
+          4,
+          "town.14"
+        ],
+        [
+          202,
+          "farm.3"
+        ],
+        [
+          5,
+          "farm.26"
+        ],
+        [
+          203,
+          "town.14"
+        ],
+        [
+          6,
+          "town.27"
+        ],
+        [
+          204,
+          "town.2"
+        ],
+        [
+          7,
+          "town.14"
+        ],
+        [
+          205,
+          "farm.3"
+        ],
+        [
+          206,
+          "farm.26"
+        ],
+        [
+          208,
+          "farm.26"
+        ],
+        [
+          11,
+          "farm.15"
+        ],
+        [
+          209,
+          "town.26"
+        ],
+        [
+          12,
+          "town.2"
+        ],
+        [
+          210,
+          "town.27"
+        ],
+        [
+          13,
+          "farm.15"
+        ],
+        [
+          211,
+          "town.3"
+        ],
+        [
+          14,
+          "town.3"
+        ],
+        [
+          212,
+          "town.14"
+        ],
+        [
+          15,
+          "farm.15"
+        ],
+        [
+          213,
+          "town.15"
+        ],
+        [
+          16,
+          "farm.3"
+        ],
+        [
+          214,
+          "town.15"
+        ],
+        [
+          17,
+          "town.27"
+        ],
+        [
+          215,
+          "farm.26"
+        ],
+        [
+          18,
+          "farm.15"
+        ],
+        [
+          35,
+          "farm.26"
+        ],
+        [
+          36,
+          "town.3"
+        ],
+        [
+          53,
+          "farm.15"
+        ],
+        [
+          54,
+          "town.26"
+        ],
+        [
+          71,
+          "farm.26"
+        ],
+        [
+          72,
+          "town.27"
+        ],
+        [
+          89,
+          "farm.26"
+        ],
+        [
+          90,
+          "town.15"
+        ],
+        [
+          107,
+          "farm.15"
+        ],
+        [
+          108,
+          "town.3"
+        ],
+        [
+          125,
+          "town.3"
+        ],
+        [
+          126,
+          "town.3"
+        ],
+        [
+          143,
+          "farm.26"
+        ],
+        [
+          144,
+          "town.3"
+        ],
+        [
+          161,
+          "town.15"
+        ],
+        [
+          162,
+          "town.2"
+        ],
+        [
+          179,
+          "town.15"
+        ],
+        [
+          180,
+          "town.26"
+        ],
+        [
+          197,
+          "farm.3"
+        ]
+      ],
+      "passage": [
+        [
+          0,
+          "block"
+        ],
+        [
+          1,
+          "block"
+        ],
+        [
+          2,
+          "block"
+        ],
+        [
+          3,
+          "block"
+        ],
+        [
+          4,
+          "block"
+        ],
+        [
+          5,
+          "block"
+        ],
+        [
+          6,
+          "block"
+        ],
+        [
+          7,
+          "block"
+        ],
+        [
+          8,
+          "block"
+        ],
+        [
+          11,
+          "block"
+        ],
+        [
+          12,
+          "block"
+        ],
+        [
+          13,
+          "block"
+        ],
+        [
+          14,
+          "block"
+        ],
+        [
+          15,
+          "block"
+        ],
+        [
+          16,
+          "block"
+        ],
+        [
+          17,
+          "block"
+        ],
+        [
+          18,
+          "block"
+        ],
+        [
+          19,
+          "block"
+        ],
+        [
+          20,
+          "block"
+        ],
+        [
+          21,
+          "block"
+        ],
+        [
+          22,
+          "block"
+        ],
+        [
+          23,
+          "block"
+        ],
+        [
+          24,
+          "block"
+        ],
+        [
+          25,
+          "block"
+        ],
+        [
+          26,
+          "block"
+        ],
+        [
+          30,
+          "block"
+        ],
+        [
+          31,
+          "block"
+        ],
+        [
+          32,
+          "block"
+        ],
+        [
+          33,
+          "block"
+        ],
+        [
+          34,
+          "block"
+        ],
+        [
+          35,
+          "block"
+        ],
+        [
+          36,
+          "block"
+        ],
+        [
+          37,
+          "block"
+        ],
+        [
+          38,
+          "block"
+        ],
+        [
+          39,
+          "block"
+        ],
+        [
+          50,
+          "block"
+        ],
+        [
+          51,
+          "block"
+        ],
+        [
+          52,
+          "block"
+        ],
+        [
+          53,
+          "block"
+        ],
+        [
+          54,
+          "block"
+        ],
+        [
+          55,
+          "block"
+        ],
+        [
+          56,
+          "block"
+        ],
+        [
+          68,
+          "block"
+        ],
+        [
+          69,
+          "block"
+        ],
+        [
+          70,
+          "block"
+        ],
+        [
+          71,
+          "block"
+        ],
+        [
+          72,
+          "block"
+        ],
+        [
+          73,
+          "block"
+        ],
+        [
+          74,
+          "block"
+        ],
+        [
+          86,
+          "block"
+        ],
+        [
+          87,
+          "block"
+        ],
+        [
+          88,
+          "block"
+        ],
+        [
+          89,
+          "block"
+        ],
+        [
+          90,
+          "block"
+        ],
+        [
+          91,
+          "block"
+        ],
+        [
+          92,
+          "block"
+        ],
+        [
+          97,
+          "block"
+        ],
+        [
+          98,
+          "block"
+        ],
+        [
+          99,
+          "block"
+        ],
+        [
+          100,
+          "block"
+        ],
+        [
+          101,
+          "block"
+        ],
+        [
+          102,
+          "block"
+        ],
+        [
+          103,
+          "block"
+        ],
+        [
+          104,
+          "block"
+        ],
+        [
+          105,
+          "block"
+        ],
+        [
+          106,
+          "block"
+        ],
+        [
+          107,
+          "block"
+        ],
+        [
+          108,
+          "block"
+        ],
+        [
+          109,
+          "block"
+        ],
+        [
+          110,
+          "block"
+        ],
+        [
+          111,
+          "block"
+        ],
+        [
+          115,
+          "block"
+        ],
+        [
+          116,
+          "block"
+        ],
+        [
+          117,
+          "block"
+        ],
+        [
+          118,
+          "block"
+        ],
+        [
+          119,
+          "block"
+        ],
+        [
+          120,
+          "block"
+        ],
+        [
+          121,
+          "block"
+        ],
+        [
+          122,
+          "block"
+        ],
+        [
+          123,
+          "block"
+        ],
+        [
+          124,
+          "block"
+        ],
+        [
+          125,
+          "block"
+        ],
+        [
+          126,
+          "block"
+        ],
+        [
+          127,
+          "block"
+        ],
+        [
+          128,
+          "block"
+        ],
+        [
+          129,
+          "block"
+        ],
+        [
+          140,
+          "block"
+        ],
+        [
+          141,
+          "block"
+        ],
+        [
+          142,
+          "block"
+        ],
+        [
+          143,
+          "block"
+        ],
+        [
+          144,
+          "block"
+        ],
+        [
+          145,
+          "block"
+        ],
+        [
+          146,
+          "block"
+        ],
+        [
+          147,
+          "block"
+        ],
+        [
+          158,
+          "block"
+        ],
+        [
+          159,
+          "block"
+        ],
+        [
+          160,
+          "block"
+        ],
+        [
+          161,
+          "block"
+        ],
+        [
+          162,
+          "block"
+        ],
+        [
+          163,
+          "block"
+        ],
+        [
+          164,
+          "block"
+        ],
+        [
+          165,
+          "block"
+        ],
+        [
+          166,
+          "block"
+        ],
+        [
+          176,
+          "block"
+        ],
+        [
+          177,
+          "block"
+        ],
+        [
+          178,
+          "block"
+        ],
+        [
+          179,
+          "block"
+        ],
+        [
+          180,
+          "block"
+        ],
+        [
+          181,
+          "block"
+        ],
+        [
+          182,
+          "block"
+        ],
+        [
+          183,
+          "block"
+        ],
+        [
+          184,
+          "block"
+        ],
+        [
+          185,
+          "block"
+        ],
+        [
+          186,
+          "block"
+        ],
+        [
+          187,
+          "block"
+        ],
+        [
+          191,
+          "block"
+        ],
+        [
+          192,
+          "block"
+        ],
+        [
+          193,
+          "block"
+        ],
+        [
+          194,
+          "block"
+        ],
+        [
+          195,
+          "block"
+        ],
+        [
+          196,
+          "block"
+        ],
+        [
+          197,
+          "block"
+        ],
+        [
+          198,
+          "block"
+        ],
+        [
+          199,
+          "block"
+        ],
+        [
+          200,
+          "block"
+        ],
+        [
+          201,
+          "block"
+        ],
+        [
+          202,
+          "block"
+        ],
+        [
+          203,
+          "block"
+        ],
+        [
+          204,
+          "block"
+        ],
+        [
+          205,
+          "block"
+        ],
+        [
+          206,
+          "block"
+        ],
+        [
+          208,
+          "block"
+        ],
+        [
+          209,
+          "block"
+        ],
+        [
+          210,
+          "block"
+        ],
+        [
+          211,
+          "block"
+        ],
+        [
+          212,
+          "block"
+        ],
+        [
+          213,
+          "block"
+        ],
+        [
+          214,
+          "block"
+        ],
+        [
+          215,
+          "block"
+        ]
+      ]
+    },
+    {
+      "id": "light",
+      "name": "Lighthouse Top",
+      "width": 16,
+      "height": 14,
+      "sheets": [
+        "town",
+        "farm",
+        "dun",
+        "custom"
+      ],
+      "ground": [
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "town.1",
+        "town.1",
+        "dun.30",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "dun.25",
+        "town.0",
+        "town.0",
+        "town.40",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "town.1",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.40",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.40",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.1",
+        "town.41",
+        "custom.0",
+        "dun.24",
+        "town.0",
+        "custom.1",
+        "town.1",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.1",
+        "town.0",
+        "custom.1",
+        "custom.1",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.42",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.43",
+        "town.43",
+        "town.43",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.40",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.0",
+        "town.88",
+        "town.1",
+        "town.1",
+        "town.1",
+        "town.0",
+        "town.39",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.1",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "custom.0",
+        "town.0",
+        "town.0",
+        "town.41",
+        "custom.0",
+        "town.1",
+        "town.1",
+        "custom.1",
+        "custom.0",
+        "town.0",
+        "town.1"
+      ],
+      "events": [
+        {
+          "id": "light-return",
+          "name": "Path to the Pines",
+          "x": 8,
+          "y": 13,
+          "pages": [
+            {
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "transfer",
+                  "map": "pine",
+                  "x": 9,
+                  "y": 1,
+                  "dir": "down",
+                  "fade": 0.4
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "keeper",
+          "name": "Lighthouse Keeper",
+          "x": 8,
+          "y": 9,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "keeper",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "KEEPER: You are late. The beam must",
+                    "turn before the cable car stops."
+                  ]
+                },
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "item",
+                    "id": "letter-keeper",
+                    "count": 1
+                  },
+                  "then": [
+                    {
+                      "op": "item",
+                      "item": "letter-keeper",
+                      "set": "sub",
+                      "count": 1
+                    },
+                    {
+                      "op": "switch",
+                      "id": "keeper-done",
+                      "value": true
+                    },
+                    {
+                      "op": "se",
+                      "name": "receive"
+                    },
+                    {
+                      "op": "text",
+                      "lines": [
+                        "KEEPER: My letter, in the rain. Light",
+                        "the three lamps by the tower, then",
+                        "the door will open."
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "KEEPER: No time for visitors. Post first."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "keeper-done"
+              },
+              "trigger": "action",
+              "sprite": "keeper",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "KEEPER: Three lamps. They burn on their",
+                    "own once they catch."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamp-1",
+          "name": "Beacon Lamp",
+          "x": 6,
+          "y": 7,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "lamp-off",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "switch",
+                    "id": "keeper-done"
+                  },
+                  "then": [
+                    {
+                      "op": "switch",
+                      "id": "lamp-1",
+                      "value": true
+                    },
+                    {
+                      "op": "selfSwitch",
+                      "key": "A",
+                      "value": true
+                    },
+                    {
+                      "op": "se",
+                      "name": "chime"
+                    },
+                    {
+                      "op": "text",
+                      "lines": [
+                        "The lamp catches and holds, bright",
+                        "against the rain."
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "An unlit beacon lamp. The keeper says",
+                        "when all three are to be lit."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": "lamp-lit",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "The lamp burns steady."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamp-2",
+          "name": "Beacon Lamp",
+          "x": 10,
+          "y": 7,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "lamp-off",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "switch",
+                    "id": "keeper-done"
+                  },
+                  "then": [
+                    {
+                      "op": "switch",
+                      "id": "lamp-2",
+                      "value": true
+                    },
+                    {
+                      "op": "selfSwitch",
+                      "key": "A",
+                      "value": true
+                    },
+                    {
+                      "op": "se",
+                      "name": "chime"
+                    },
+                    {
+                      "op": "text",
+                      "lines": [
+                        "The lamp catches and holds, bright",
+                        "against the rain."
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "An unlit beacon lamp. The keeper says",
+                        "when all three are to be lit."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": "lamp-lit",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "The lamp burns steady."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "lamp-3",
+          "name": "Beacon Lamp",
+          "x": 8,
+          "y": 11,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "lamp-off",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "switch",
+                    "id": "keeper-done"
+                  },
+                  "then": [
+                    {
+                      "op": "switch",
+                      "id": "lamp-3",
+                      "value": true
+                    },
+                    {
+                      "op": "selfSwitch",
+                      "key": "A",
+                      "value": true
+                    },
+                    {
+                      "op": "se",
+                      "name": "chime"
+                    },
+                    {
+                      "op": "text",
+                      "lines": [
+                        "The lamp catches and holds, bright",
+                        "against the rain."
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "An unlit beacon lamp. The keeper says",
+                        "when all three are to be lit."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": "lamp-lit",
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "The lamp burns steady."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "tower-door",
+          "name": "Beacon Door",
+          "x": 8,
+          "y": 6,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": null,
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "switch",
+                    "id": "lamp-1"
+                  },
+                  "then": [
+                    {
+                      "op": "if",
+                      "if": {
+                        "kind": "switch",
+                        "id": "lamp-2"
+                      },
+                      "then": [
+                        {
+                          "op": "if",
+                          "if": {
+                            "kind": "switch",
+                            "id": "lamp-3"
+                          },
+                          "then": [
+                            {
+                              "op": "switch",
+                              "id": "lamp-ready",
+                              "value": true
+                            },
+                            {
+                              "op": "switch",
+                              "id": "door-open",
+                              "value": true
+                            },
+                            {
+                              "op": "selfSwitch",
+                              "key": "A",
+                              "value": true
+                            },
+                            {
+                              "op": "se",
+                              "name": "unlock"
+                            },
+                            {
+                              "op": "text",
+                              "lines": [
+                                "Three locks release in one breath.",
+                                "The beacon door swings open."
+                              ]
+                            }
+                          ],
+                          "else": [
+                            {
+                              "op": "text",
+                              "lines": [
+                                "One lamp is still dark."
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "else": [
+                        {
+                          "op": "text",
+                          "lines": [
+                            "Two lamps burn. One is still dark."
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "The lamps are not all lit yet."
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "playerTouch",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "beacon-end",
+          "name": "The Beacon",
+          "x": 8,
+          "y": 5,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": [
+                {
+                  "op": "text",
+                  "lines": [
+                    "The great lamp is cold and silent."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "switch": "door-open"
+              },
+              "trigger": "playerTouch",
+              "sprite": null,
+              "commands": [
+                {
+                  "op": "wait",
+                  "seconds": 0.5
+                },
+                {
+                  "op": "if",
+                  "if": {
+                    "kind": "variable",
+                    "id": "parcels",
+                    "op": ">=",
+                    "value": 5
+                  },
+                  "then": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "THE END.",
+                        "The beam cuts the storm open. Three",
+                        "letters delivered, five lost parcels",
+                        "home. The cable car waits with its"
+                      ]
+                    }
+                  ],
+                  "else": [
+                    {
+                      "op": "text",
+                      "lines": [
+                        "THE END.",
+                        "The beam cuts the storm open. Three",
+                        "letters delivered to the mountain."
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "The last car of the day carries the",
+                    "courier down, and the rain lightens."
+                  ]
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "exit"
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "parallel",
+              "sprite": null,
+              "commands": []
+            }
+          ]
+        },
+        {
+          "id": "parcel-light",
+          "name": "Lost Parcel",
+          "x": 2,
+          "y": 9,
+          "pages": [
+            {
+              "trigger": "action",
+              "sprite": "parcel",
+              "blocks": true,
+              "commands": [
+                {
+                  "op": "common",
+                  "id": "ce-pick-parcel"
+                },
+                {
+                  "op": "selfSwitch",
+                  "key": "A",
+                  "value": true
+                },
+                {
+                  "op": "text",
+                  "lines": [
+                    "The last parcel, at the top of the",
+                    "world. The clerk will not believe it."
+                  ]
+                }
+              ]
+            },
+            {
+              "condition": {
+                "selfSwitch": "A"
+              },
+              "trigger": "action",
+              "sprite": null,
+              "blocks": false,
+              "commands": []
+            }
+          ]
+        }
+      ],
+      "upper": [
+        [
+          161,
+          "town.44"
+        ],
+        [
+          162,
+          "town.44"
+        ],
+        [
+          163,
+          "town.44"
+        ],
+        [
+          164,
+          "town.44"
+        ],
+        [
+          165,
+          "town.44"
+        ],
+        [
+          193,
+          "town.44"
+        ],
+        [
+          194,
+          "town.44"
+        ],
+        [
+          196,
+          "town.44"
+        ],
+        [
+          197,
+          "town.44"
+        ],
+        [
+          177,
+          "town.46"
+        ],
+        [
+          181,
+          "town.47"
+        ],
+        [
+          23,
+          "custom.12"
+        ],
+        [
+          24,
+          "custom.13"
+        ],
+        [
+          39,
+          "custom.10"
+        ],
+        [
+          40,
+          "custom.11"
+        ],
+        [
+          55,
+          "custom.6"
+        ],
+        [
+          56,
+          "custom.7"
+        ],
+        [
+          71,
+          "custom.8"
+        ],
+        [
+          72,
+          "custom.9"
+        ],
+        [
+          87,
+          "custom.4"
+        ],
+        [
+          88,
+          "custom.5"
+        ],
+        [
+          139,
+          "dun.89"
+        ],
+        [
+          149,
+          "town.30"
+        ],
+        [
+          204,
+          "town.4"
+        ],
+        [
+          130,
+          "town.29"
+        ],
+        [
+          93,
+          "town.3"
+        ],
+        [
+          219,
+          "farm.77"
+        ],
+        [
+          0,
+          "farm.26"
+        ],
+        [
+          208,
+          "town.15"
+        ],
+        [
+          1,
+          "farm.15"
+        ],
+        [
+          209,
+          "town.14"
+        ],
+        [
+          2,
+          "town.3"
+        ],
+        [
+          210,
+          "farm.15"
+        ],
+        [
+          3,
+          "town.14"
+        ],
+        [
+          211,
+          "farm.3"
+        ],
+        [
+          4,
+          "farm.26"
+        ],
+        [
+          212,
+          "town.3"
+        ],
+        [
+          5,
+          "town.14"
+        ],
+        [
+          213,
+          "farm.26"
+        ],
+        [
+          6,
+          "town.2"
+        ],
+        [
+          214,
+          "town.2"
+        ],
+        [
+          7,
+          "town.3"
+        ],
+        [
+          215,
+          "town.27"
+        ],
+        [
+          8,
+          "farm.3"
+        ],
+        [
+          9,
+          "town.15"
+        ],
+        [
+          217,
+          "town.26"
+        ],
+        [
+          10,
+          "farm.26"
+        ],
+        [
+          218,
+          "farm.26"
+        ],
+        [
+          11,
+          "farm.15"
+        ],
+        [
+          219,
+          "town.3"
+        ],
+        [
+          12,
+          "farm.3"
+        ],
+        [
+          220,
+          "town.14"
+        ],
+        [
+          13,
+          "town.3"
+        ],
+        [
+          221,
+          "town.26"
+        ],
+        [
+          14,
+          "town.15"
+        ],
+        [
+          222,
+          "town.15"
+        ],
+        [
+          15,
+          "town.27"
+        ],
+        [
+          223,
+          "farm.15"
+        ],
+        [
+          16,
+          "town.27"
+        ],
+        [
+          31,
+          "town.26"
+        ],
+        [
+          32,
+          "town.2"
+        ],
+        [
+          47,
+          "town.3"
+        ],
+        [
+          48,
+          "farm.3"
+        ],
+        [
+          63,
+          "farm.3"
+        ],
+        [
+          64,
+          "town.2"
+        ],
+        [
+          79,
+          "farm.15"
+        ],
+        [
+          80,
+          "town.15"
+        ],
+        [
+          95,
+          "farm.3"
+        ],
+        [
+          96,
+          "town.27"
+        ],
+        [
+          111,
+          "town.15"
+        ],
+        [
+          112,
+          "town.14"
+        ],
+        [
+          127,
+          "town.15"
+        ],
+        [
+          128,
+          "town.2"
+        ],
+        [
+          143,
+          "farm.26"
+        ],
+        [
+          144,
+          "town.3"
+        ],
+        [
+          159,
+          "town.14"
+        ],
+        [
+          160,
+          "farm.15"
+        ],
+        [
+          175,
+          "town.15"
+        ],
+        [
+          176,
+          "farm.3"
+        ],
+        [
+          191,
+          "town.27"
+        ],
+        [
+          192,
+          "farm.15"
+        ],
+        [
+          207,
+          "farm.3"
+        ]
+      ],
+      "passage": [
+        [
+          0,
+          "block"
+        ],
+        [
+          1,
+          "block"
+        ],
+        [
+          2,
+          "block"
+        ],
+        [
+          3,
+          "block"
+        ],
+        [
+          4,
+          "block"
+        ],
+        [
+          5,
+          "block"
+        ],
+        [
+          6,
+          "block"
+        ],
+        [
+          7,
+          "block"
+        ],
+        [
+          8,
+          "block"
+        ],
+        [
+          9,
+          "block"
+        ],
+        [
+          10,
+          "block"
+        ],
+        [
+          11,
+          "block"
+        ],
+        [
+          12,
+          "block"
+        ],
+        [
+          13,
+          "block"
+        ],
+        [
+          14,
+          "block"
+        ],
+        [
+          15,
+          "block"
+        ],
+        [
+          16,
+          "block"
+        ],
+        [
+          23,
+          "block"
+        ],
+        [
+          24,
+          "block"
+        ],
+        [
+          31,
+          "block"
+        ],
+        [
+          32,
+          "block"
+        ],
+        [
+          39,
+          "block"
+        ],
+        [
+          40,
+          "block"
+        ],
+        [
+          47,
+          "block"
+        ],
+        [
+          48,
+          "block"
+        ],
+        [
+          55,
+          "block"
+        ],
+        [
+          56,
+          "block"
+        ],
+        [
+          63,
+          "block"
+        ],
+        [
+          64,
+          "block"
+        ],
+        [
+          71,
+          "block"
+        ],
+        [
+          72,
+          "block"
+        ],
+        [
+          79,
+          "block"
+        ],
+        [
+          80,
+          "block"
+        ],
+        [
+          87,
+          "block"
+        ],
+        [
+          88,
+          "pass"
+        ],
+        [
+          95,
+          "block"
+        ],
+        [
+          96,
+          "block"
+        ],
+        [
+          111,
+          "block"
+        ],
+        [
+          112,
+          "block"
+        ],
+        [
+          127,
+          "block"
+        ],
+        [
+          128,
+          "block"
+        ],
+        [
+          143,
+          "block"
+        ],
+        [
+          144,
+          "block"
+        ],
+        [
+          159,
+          "block"
+        ],
+        [
+          160,
+          "block"
+        ],
+        [
+          161,
+          "block"
+        ],
+        [
+          162,
+          "block"
+        ],
+        [
+          163,
+          "block"
+        ],
+        [
+          164,
+          "block"
+        ],
+        [
+          165,
+          "block"
+        ],
+        [
+          175,
+          "block"
+        ],
+        [
+          176,
+          "block"
+        ],
+        [
+          177,
+          "block"
+        ],
+        [
+          181,
+          "block"
+        ],
+        [
+          191,
+          "block"
+        ],
+        [
+          192,
+          "block"
+        ],
+        [
+          193,
+          "block"
+        ],
+        [
+          194,
+          "block"
+        ],
+        [
+          196,
+          "block"
+        ],
+        [
+          197,
+          "block"
+        ],
+        [
+          207,
+          "block"
+        ],
+        [
+          208,
+          "block"
+        ],
+        [
+          209,
+          "block"
+        ],
+        [
+          210,
+          "block"
+        ],
+        [
+          211,
+          "block"
+        ],
+        [
+          212,
+          "block"
+        ],
+        [
+          213,
+          "block"
+        ],
+        [
+          214,
+          "block"
+        ],
+        [
+          215,
+          "block"
+        ],
+        [
+          217,
+          "block"
+        ],
+        [
+          218,
+          "block"
+        ],
+        [
+          219,
+          "block"
+        ],
+        [
+          220,
+          "block"
+        ],
+        [
+          221,
+          "block"
+        ],
+        [
+          222,
+          "block"
+        ],
+        [
+          223,
+          "block"
+        ]
+      ]
+    }
+  ]
+}

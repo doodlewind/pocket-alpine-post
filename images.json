@@ -1,0 +1,32 @@
+{
+  "assets/map-hub-ground.png": {
+    "psm": 2
+  },
+  "assets/map-farm-ground.png": {
+    "psm": 2
+  },
+  "assets/map-mine-ground.png": {
+    "psm": 2
+  },
+  "assets/map-pine-ground.png": {
+    "psm": 2
+  },
+  "assets/map-light-ground.png": {
+    "psm": 2
+  },
+  "assets/map-hub-upper.png": {
+    "psm": 2
+  },
+  "assets/map-farm-upper.png": {
+    "psm": 2
+  },
+  "assets/map-mine-upper.png": {
+    "psm": 2
+  },
+  "assets/map-pine-upper.png": {
+    "psm": 2
+  },
+  "assets/map-light-upper.png": {
+    "psm": 2
+  }
+}
