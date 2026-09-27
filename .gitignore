@@ -1,0 +1,7 @@
+node_modules/
+dist/
+
+# Bun / editor noise
+.DS_Store
+*.swp
+.pocket/
