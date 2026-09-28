@@ -59,6 +59,7 @@ import {
 } from "../input/pointer.ts";
 import { PlayerSprite } from "./PlayerSprite.tsx";
 import { DialogBox } from "./DialogBox.tsx";
+import { PANEL } from "./theme.ts";
 import { SaveMenu, type SlotInfo } from "./SaveMenu.tsx";
 import {
   ALPINE_CONTROL_PLATE_COLOR,
@@ -755,22 +756,19 @@ export function GameView() {
         <Image src={MAP_UPPER[mapId()]} class="absolute w-[512] h-[512]" style={{ posType: 1, insetL: 0, insetT: 0 }} debugName="alpine-upper" />
 
         {/* Object-level auto-play sprites (street lamps, beacon). The
-            visibility accessor lives INSIDE the style prop: reading a
-            signal in the .map() body would re-run the whole transform and
-            remount every sprite on any switch flip. */}
+            switch read sits in the style expression itself, so Solid
+            tracks it and flips only this node's display (a getter inside
+            the object literal was invisible to the compiler and froze the
+            beacon at its mount-time value); reading the signal in the
+            .map() body instead would remount every sprite. */}
         {MAP_ORDER.map((mid) => (
           <View class="absolute" style={{ posType: 1, insetL: 0, insetT: 0, display: mapId() === mid ? 0 : 1 }} debugName={`alpine-lamps-${mid}`}>
-            {(ANIMATIONS[mid] ?? []).map((a) => (
+            {(ANIMATIONS[mid] ?? []).filter((a) => a.layer === "object").map((a) => (
               <Sprite
                 class="absolute w-[16] h-[16]"
                 sprite={ANIM_ATLASES[a.atlas]?.src}
                 frameStep={a.frameStep}
-                style={{
-                  get posType() { return 1; },
-                  get insetL() { return a.x * 16; },
-                  get insetT() { return a.y * 16; },
-                  get display() { return !a.when || switches()[a.when] ? 0 : 1; },
-                }}
+                style={{ posType: 1, insetL: a.x * 16 + (a.dx ?? 0), insetT: a.y * 16, display: !a.when || switches()[a.when] ? 0 : 1 }}
               />
             ))}
           </View>
@@ -829,20 +827,22 @@ export function GameView() {
 
       <Show when={help()}>
         <View class="absolute inset-0 flex-row justify-center items-center" style={{ posType: 1, bgColor: "#00000a" }} debugName="alpine-help-overlay">
-          <View class="flex-col p-[2]" style={{ width: 420, height: 232, bgColor: "#5d4a3a" }}>
-            <View class="flex-col grow p-[8]" style={{ bgColor: "#1a1208" }}>
-              <Text class="text-sm" style={{ textColor: "#ffd961", lineHeight: 18, height: 18 }}>ALPINE POST — CONTROLS</Text>
+          <View class="flex-col p-[2]" style={{ width: 420, height: 232, bgColor: PANEL.border }}>
+            <View class="flex-col grow p-[1]" style={{ bgColor: PANEL.rim }}>
+            <View class="flex-col grow p-[7]" style={{ bgColor: PANEL.paper }}>
+              <Text class="text-sm" style={{ textColor: PANEL.accent, lineHeight: 18, height: 18 }}>ALPINE POST — CONTROLS</Text>
               <View style={{ height: 7 }} />
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>ARROWS  walk / choose</Text>
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>Z or ENTER  talk / confirm</Text>
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>X or BACKSPACE  back</Text>
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>SPACE  save menu</Text>
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>Q or L  rewind 3 seconds</Text>
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>TAB  demo / restart demo</Text>
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>A or S  open / close help</Text>
-              <Text class="text-xs" style={{ textColor: "#ffeecf", lineHeight: 17, height: 17 }}>MOUSE  walk / advance / choose</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>ARROWS  walk / choose</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>Z or ENTER  talk / confirm</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>X or BACKSPACE  back</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>SPACE  save menu</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>Q or L  rewind 3 seconds</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>TAB  demo / restart demo</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>A or S  open / close help</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>MOUSE  walk / advance / choose</Text>
               <View class="grow" />
-              <Text class="text-xs" style={{ textColor: "#c7a97c", lineHeight: 14, height: 14 }}>A, S or click  close help</Text>
+              <Text class="text-xs" style={{ textColor: PANEL.dim, lineHeight: 14, height: 14 }}>A, S or click  close help</Text>
+            </View>
             </View>
           </View>
         </View>

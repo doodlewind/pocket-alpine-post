@@ -4,16 +4,17 @@
 
 import { createMemo, For, Show, type Accessor } from "solid-js";
 import { Text, View } from "@pocketjs/framework/components";
+import { PANEL } from "./theme.ts";
 import { Osk } from "@pocketjs/framework/osk";
 import type { OskController } from "@pocketjs/framework/osk";
 import type { FsSlotInfo } from "../save-fs.ts";
 import { ROOT_CODE, ROOT_FS, type MenuState } from "../vendor/pocket-rpgkit/src/engine/save-menu.ts";
 
-const RIM = "#5d4a3a";
-const FILL = "#1a1208";
-const INK = "#ffeecf";
-const DIM = "#c7a97c";
-const ACCENT = "#ffd961";
+const RIM = PANEL.border;
+const FILL = PANEL.paper;
+const INK = PANEL.ink;
+const DIM = PANEL.dim;
+const ACCENT = PANEL.accent;
 
 export type SlotInfo = (FsSlotInfo | { slot: number; error: string } | null)[];
 
@@ -68,9 +69,10 @@ export function SaveMenu(props: SaveMenuProps) {
           style={{ posType: 1, width: 420, height: 232, bgColor: RIM }}
           debugName="alpine-save-panel"
         >
+          <View style={{ posType: 1, insetL: 2, insetT: 2, insetR: 2, insetB: 2, bgColor: PANEL.rim }} />
           <View
             class="flex-col grow p-[8]"
-            style={{ posType: 1, insetL: 2, insetT: 2, insetR: 2, insetB: 2, bgColor: FILL }}
+            style={{ posType: 1, insetL: 3, insetT: 3, insetR: 3, insetB: 3, bgColor: FILL }}
           >
             <Show when={props.menu().kind === "root"}>
               <Text class="text-sm" style={{ textColor: ACCENT, lineHeight: 18, height: 18 }} debugName="alpine-save-title">

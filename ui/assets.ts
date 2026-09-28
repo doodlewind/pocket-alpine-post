@@ -71,11 +71,22 @@ export const PLAYER_WALK_R: string[] = [
   "assets/player-pose3-r.png",
 ];
 
+// Speaker portraits for the dialog box, keyed by the name a line starts
+// with ("POSTMASTER: ...").
+export const FACE_SRC: Record<string, string> = {
+  "POSTMASTER": "assets/face/postmaster.png",
+  "CLERK": "assets/face/clerk.png",
+  "FARMER": "assets/face/farmer.png",
+  "MINER": "assets/face/miner.png",
+  "HERMIT": "assets/face/hermit.png",
+  "KEEPER": "assets/face/keeper.png",
+};
+
 // Vblank auto-play atlases (sprites.json); the core cycles the frames,
 // guest JS never touches them per frame. src key -> frame step.
 export const ANIM_ATLASES: Record<string, { src: string; frames: number; step: number }> = {
   "water": { src: "assets/anim/water.png", frames: 2, step: 24 },
-  "fire": { src: "assets/anim/fire.png", frames: 2, step: 8 },
+  "fire": { src: "assets/anim/fire.png", frames: 4, step: 8 },
   "lamp": { src: "assets/anim/lamp.png", frames: 2, step: 22 },
   "beacon": { src: "assets/anim/beacon.png", frames: 2, step: 10 },
 };

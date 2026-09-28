@@ -1363,25 +1363,27 @@ function light(): MapDef {
 // project
 // ===========================================================================
 
+/** Every static event sprite, by the name pages use. Its art (a 16x16
+ *  image baked to assets/npc/<name>.png) is cast in art/sprites.ts. */
 export const STATIC_SPRITES = {
-  postmaster: "dun.88",
-  shopkeeper: "dun.86",
-  clerk: "dun.85",
-  farmer: "farm.109",
-  miner: "dun.87",
-  hermit: "dun.111",
-  keeper: "dun.100",
-  wanderer: "farm.108",
-  sheep: "farm.120",
-  "chest-closed": "dun.90",
-  "chest-open": "dun.91",
-  sign: "town.83",
-  mailbox: "custom.2",
-  parcel: "custom.3",
-  hay: "farm.96",
-  mushrooms: "town.29",
-  "fire-off": "custom.14",
-  "lamp-off": "custom.15",
+  postmaster: "character",
+  shopkeeper: "character",
+  clerk: "character",
+  farmer: "character",
+  miner: "character",
+  hermit: "character",
+  keeper: "character",
+  wanderer: "character",
+  sheep: "character",
+  "chest-closed": "prop",
+  "chest-open": "prop",
+  sign: "prop",
+  mailbox: "prop",
+  parcel: "prop",
+  hay: "prop",
+  mushrooms: "prop",
+  "fire-off": "prop",
+  "lamp-off": "prop",
 } as const;
 
 /** Event page sprite keys that bind an animated vblank atlas instead of a
@@ -1400,6 +1402,9 @@ export interface AnimCell {
   layer: "ground" | "object";
   frameStep: number;
   when?: string;
+  /** Pixel nudge from the cell's left edge (the beacon sits on the
+   *  lighthouse's center line, between two cells). */
+  dx?: number;
 }
 
 export const ANIMATIONS: Record<string, AnimCell[]> = {
@@ -1418,7 +1423,7 @@ export const ANIMATIONS: Record<string, AnimCell[]> = {
   ],
   mine: [],
   pine: [],
-  light: [{ x: 8, y: 1, atlas: "beacon", layer: "object", frameStep: 10, when: "lamp-ready" }],
+  light: [{ x: 8, y: 1, dx: -8, atlas: "beacon", layer: "object", frameStep: 10, when: "lamp-ready" }],
 };
 
 export function buildGame(): { project: Project; maps: MapDef[] } {

@@ -122,9 +122,12 @@ function pixels(
 
 const CYAN = (r: number, g: number, b: number): boolean => r < 130 && g > 190 && b > 210;
 const RED = (r: number, g: number, b: number): boolean => r > 210 && g < 150 && b < 140;
-const CREAM = (r: number, g: number, b: number): boolean => r > 225 && g > 200 && b > 160;
 const GOLD = (r: number, g: number, b: number): boolean => r > 175 && g > 140 && b < 125;
 const DARK = (r: number, g: number, b: number): boolean => r < 90 && g < 80 && b < 70;
+// Panel theme (ui/theme.ts): parchment paper, dark ink, red-orange accent.
+const PAPER = (r: number, g: number, b: number): boolean => r > 230 && g > 222 && b > 230;
+const INK = (r: number, g: number, b: number): boolean => r < 75 && g < 70 && b < 80;
+const ACCENT = (r: number, g: number, b: number): boolean => r > 180 && g < 110 && b < 90;
 
 function intersects(a: HudRect, b: HudRect): boolean {
   return a.x < b.x + b.width &&
@@ -217,9 +220,9 @@ simDescribe("Alpine Post pointer — built bundle", () => {
     textApp.frame(BTN.CIRCLE);
     textApp.frame();
     expect(textApp.state().interp.modal?.kind).toBe("text");
-    // The visible dark panel itself is the hit region; text is still at the
-    // typewriter's first frame here.
-    expect(pixels(textApp.world.render(), 20, 192, 460, 264, (r, g, b) => r < 45 && g < 35 && b < 25)).toBeGreaterThan(2500);
+    // The visible parchment panel itself is the hit region; text is still
+    // at the typewriter's first frame here.
+    expect(pixels(textApp.world.render(), 20, 192, 460, 264, PAPER)).toBeGreaterThan(2500);
     textApp.click(240, 220);
     textApp.frame();
     textApp.frame();
@@ -232,7 +235,7 @@ simDescribe("Alpine Post pointer — built bundle", () => {
     const tape = expandRuns(ALPINE_TAPE_RUNS);
     for (let i = 0; i <= 335; i++) app.frame(tape[i]!);
     expect(app.state().interp.modal?.kind).toBe("choices");
-    expect(pixels(app.world.render(), 236, 104, 430, 164, CREAM)).toBeGreaterThan(8);
+    expect(pixels(app.world.render(), 236, 104, 430, 164, INK)).toBeGreaterThan(8);
     await capture(app, "pointer-choice");
 
     // Press row 2 ("Hot soup") and hold: the press moves the cursor but
@@ -242,7 +245,7 @@ simDescribe("Alpine Post pointer — built bundle", () => {
     const selected = app.state().interp.modal;
     expect(selected?.kind).toBe("choices");
     expect(selected?.kind === "choices" ? selected.options[selected.index] : "").toContain("Hot soup");
-    expect(pixels(app.world.render(), 236, 118, 430, 134, GOLD)).toBeGreaterThan(8);
+    expect(pixels(app.world.render(), 236, 118, 430, 134, ACCENT)).toBeGreaterThan(8);
     await capture(app, "pointer-hot-soup-held");
 
     // Release over the row confirms the held selection.
@@ -297,13 +300,13 @@ simDescribe("Alpine Post pointer — built bundle", () => {
     app.frame(BTN.START);
     app.frame();
     expect(app.hooks().menu().kind).toBe("root");
-    expect(pixels(app.world.render(), 40, 54, 220, 74, GOLD)).toBeGreaterThan(3);
+    expect(pixels(app.world.render(), 40, 54, 220, 74, ACCENT)).toBeGreaterThan(3);
     await capture(app, "pointer-save-menu");
 
     app.click(100, 60); // Save to slot
     app.frame();
     expect(app.hooks().menu().kind).toBe("slots-save");
-    expect(pixels(app.world.render(), 40, 54, 220, 120, CREAM)).toBeGreaterThan(20);
+    expect(pixels(app.world.render(), 40, 54, 220, 120, INK)).toBeGreaterThan(20);
 
     app.click(100, 80); // Slot 2
     app.frame();
@@ -320,7 +323,7 @@ simDescribe("Alpine Post pointer — built bundle", () => {
     world.frame(BTN.SQUARE, 0x8080);
     world.tick();
     expect(g.__alpineSession!.pointer().help).toBe(true);
-    expect(pixels(world.render(), 40, 45, 340, 190, CREAM)).toBeGreaterThan(80);
+    expect(pixels(world.render(), 40, 45, 340, 190, INK)).toBeGreaterThan(80);
     if (CAPTURE_DIR) await Bun.write(`${CAPTURE_DIR}/keyboard-help.png`, encodePNG(world.render(), 480, 272));
     world.frame(0, 0x8080);
     world.tick();

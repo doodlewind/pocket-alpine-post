@@ -7,9 +7,9 @@
     "psm": 2
   },
   "assets/anim/fire.png": {
-    "cols": 2,
+    "cols": 4,
     "rows": 1,
-    "frames": 2,
+    "frames": 4,
     "step": 8,
     "psm": 2
   },

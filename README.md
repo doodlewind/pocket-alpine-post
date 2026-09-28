@@ -64,9 +64,11 @@ bunx tsc --noEmit
 bun run desktop        # build for the desktop host and open a window
 ```
 
-`bun run gen-assets` rebakes every map image, sprite, and atlas from
-`assets/src/` and `game/custom-art.ts`; the output is byte-identical to
-what is committed.
+`bun run gen-assets` rebakes every map image, sprite, portrait, and atlas
+from the Ninja Adventure sheets in `assets/src/ninja/` and the art scripts
+in `art/`; the output is byte-identical to what is committed.
+`bun art/preview.ts` renders each whole map with its characters, scaled
+up, into `dist/preview/`, for reviewing art without booting the game.
 
 Saves go to the per-app `data.fs` root, which on macOS is
 `~/Library/Application Support/pocketjs/dev.lfkdsk.alpine-post/`. Web and
@@ -85,8 +87,15 @@ console builds use save codes instead.
 - The game data lives in code (`game/game-data.ts`), and `gen-assets.ts`
   emits it as the `rpgkit-project/v1` document `data/alpine-post.json`.
   `game/restore.ts` adds cross-map loading on top of the kit's per-map
-  restore gate. `ui/` holds the game's own screen, dialog, save menu, and
-  HUD, and `input/pointer.ts` adds click-to-walk.
+  restore gate. `ui/` holds the game's own screen, dialog (with speaker
+  portraits), save menu, and HUD, and `input/pointer.ts` adds
+  click-to-walk.
+- The art is painted, not tiled: the maps are authored in logical tile
+  ids that decide only where you can walk, and each map's art script
+  (`art/maps.ts`) reads that layout and paints Ninja Adventure art over it
+  — path and pond autotiles, trees and boulders as whole sprites, houses
+  with roofs on the upper layer, a few pieces drawn in the pack's palette
+  (`art/custom.ts`). Changing the art never changes the game.
 - `tools/build.ts` builds the bundle into `dist/`. `tools/desktop.ts`
   resolves `pocket.json` against the desktop target, builds from that
   plan, and starts the PocketJS desktop host with this repository's
@@ -104,7 +113,6 @@ console builds use save codes instead.
 
 ## License
 
-Code: MIT (`LICENSE`). Art: Kenney Tiny Town, Tiny Dungeon, and Tiny Farm
-(CC0 1.0), Lanea Zimmerman (Sharm) "Tiny 16" (**CC-BY 3.0**, attribution
-required), and original CC0 cells. See `ATTRIBUTION.md`; the verbatim
-license texts are in `assets/src/`.
+Code: MIT (`LICENSE`). Art: all CC0 — Pixel-Boy and AAA's Ninja Adventure
+Asset Pack plus pieces drawn for this game. See `ATTRIBUTION.md`; the
+verbatim license text is `assets/src/ninja/LICENSE.txt`.

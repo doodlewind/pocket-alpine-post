@@ -1,67 +1,57 @@
 # Asset attribution — Alpine Post (《山巅邮路》)
 
-Every asset in this game is CC0 or CC-BY. No RPG Maker or other commercial
-game assets are included. This file and the verbatim license texts under
-`assets/src/` cover everything this repository ships; the Pocket RPG Kit
-submodule carries its own attribution for its examples.
+Every asset in this game is CC0. No RPG Maker or other commercial game
+assets are included. This file and the verbatim license text under
+`assets/src/ninja/` cover everything this repository ships; the Pocket RPG
+Kit submodule carries its own attribution for its examples.
 
-## Kenney — Tiny Town
+## Pixel-Boy and AAA — Ninja Adventure Asset Pack
 
-- File: `assets/src/town-tiles.png` (192×176, 12×11 grid of 16×16 cells).
-- Source: https://kenney.nl/assets/tiny-town (Tiny Town 1.1, 2023-01-11).
-- License: **CC0 1.0 Universal** (public domain dedication).
-  Verbatim license text: `assets/src/LICENSE-kenney-town.txt`.
-- Used for: grass, dirt roads, cobble, buildings, fences, signs, props.
-  Credit is not required by CC0 but is given: Kenney (www.kenney.nl).
+- Files: everything under `assets/src/ninja/`, kept at the pack's own
+  relative paths:
+  - `Backgrounds/Tilesets/` — `TilesetFloor`, `TilesetNature`,
+    `TilesetHouse`, `TilesetField`, `TilesetWater`, `TilesetElement`,
+    `TilesetRelief`, `TilesetReliefDetail`, `TilesetFloorDetail`,
+    `Interior/TilesetInteriorFloor` (terrain, paths, cobblestone, trees,
+    boulders, houses, fences, fields, ponds, planks, the mine mouth);
+  - `Actor/Characters/*/SpriteSheet.png` — Greenman (the player), OldMan,
+    Woman, Inspector, OldMan3, Villager3, EggBoy, Monk, OldMan2;
+    `Actor/Characters/*/Faceset.png` for the six speakers;
+    `Actor/Animals/Pig/SpriteSheetPink.png`;
+  - `HUD/Dialog/FacesetBox.png` (the portrait frame);
+  - `Items/Treasure/LittleTreasureChest.png`.
+- Sources: https://pixel-boy.itch.io/ninja-adventure-asset-pack and
+  https://github.com/pixel-boy/NinjaAdventure. The pack's GitHub repository
+  ships only part of the pack; the full-pack files were taken from a public
+  project that vendors the unmodified pack
+  (https://github.com/MarioLDD/Kuroshiro-adventure,
+  `Assets/NinjaAdventure/`, whose `LICENSE.txt` is the same CC0 text).
+- License: **CC0 1.0 Universal** (public domain dedication),
+  https://creativecommons.org/publicdomain/zero/1.0/legalcode. Verbatim
+  text: `assets/src/ninja/LICENSE.txt`.
+- One file shipped as a palette PNG (`Items/Treasure/LittleTreasureChest.png`)
+  and is stored as a pixel-identical RGBA conversion, because the PocketJS
+  PNG decoder reads RGBA only; no pixels were altered.
+- Credit is not required by CC0 but is given: **Ninja Adventure Asset Pack
+  — Pixel-Boy and AAA**.
 
-## Kenney — Tiny Dungeon
+## Made for this game (dedicated CC0)
 
-- File: `assets/src/dungeon-tiles.png` (192×176, 12×11 grid of 16×16 cells).
-- Source: https://kenney.nl/assets/tiny-dungeon
-- License: **CC0 1.0 Universal**. Verbatim license text:
-  `assets/src/LICENSE-kenney-dungeon.txt`.
-- Used for: character sprites (villager, merchant, boy, miner, hooded
-  hermit, keeper), chests, mine props and stone trim. Kenney
-  (www.kenney.nl).
+All of the following are **CC0 1.0**,
+https://creativecommons.org/publicdomain/zero/1.0/, by the Alpine Post
+authors:
 
-## Kenney — Tiny Farm
-
-- File: `assets/src/farm-tiles.png` (192×176, 12×11 grid of 16×16 cells).
-  Pixel-for-pixel RGBA conversion of the pack's palette-indexed
-  `Tilemap/tilemap_packed.png` (Tiny Farm 1.0, 2026-07-01); no pixels were
-  altered.
-- Source: https://kenney.nl/assets/tiny-farm
-- License: **CC0 1.0 Universal**. Verbatim license text:
-  `assets/src/LICENSE-kenney-farm.txt`.
-- Used for: tilled field strips, crops, the sheep, farmer character,
-  hay bales, sunflowers, sacks, tools and farm props. Kenney (www.kenney.nl).
-
-## Lanea Zimmerman (Sharm) — Tiny 16 basic character set (player)
-
-- Files: `assets/src/hero-down.png`, `hero-left.png`, `hero-right.png`,
-  `hero-up.png` (four 64×16 three-frame walker atlases).
-- Source: https://opengameart.org/content/tiny-16-basic
-  (Lanea Zimmerman, "Tiny 16", via OpenGameArt.org).
-- License: **CC-BY 3.0**, https://creativecommons.org/licenses/by/3.0/
-  Verbatim license text: `assets/src/LICENSE-sharm-ccby3.txt`.
-- Required credit: **Lanea Zimmerman (Sharm), "Tiny 16"**, via
-  OpenGameArt.org. `assets/player-*.png` are crops of the atlas cells; no
-  pixels were altered.
-
-## Generated in this repository (dedicated CC0)
-
-- `assets/map-*-{ground,upper}.png` — 512×512 PSM_4444 per-map images baked
-  by `gen-assets.ts` from the three Kenney sheets above (CC0 derivatives).
-- `assets/npc/*.png` — 16×16 event sprites: 14 cells cropped verbatim from
-  the Kenney Tiny Town / Tiny Dungeon / Tiny Farm sheets (CC0), and four
-  drawn in code (`mailbox`, `parcel`, `fire-off`, `lamp-off`; see below).
-- The code-drawn cells in `game/custom-art.ts` (mailbox, parcel, unlit
-  campfire and lamps, lighthouse tower, grass variants), which also bake
-  into the map images, and the `assets/anim/*.png` vblank atlases (water,
-  campfire, lamps, beacon): original 16px art drawn for this project in
-  colors sampled from the Kenney Tiny palette. Dedicated **CC0 1.0** by
-  the Alpine Post authors.
-- `tests/goldens/journey.*.png` — frames rendered by the PocketJS wasm sim
-  from the assets above; the same licenses apply.
-- `assets/player-dir*.png`, `assets/player-pose*.png` — crops of the Sharm
-  walker (**CC-BY 3.0**; the credit line above applies).
+- the baked maps `assets/map-*-{ground,upper}.png`, composed by the art
+  scripts in `art/` from the pack sheets above;
+- pieces drawn in the pack's palette in `art/custom.ts`: the post box,
+  parcel, lanterns (unlit and the lit animation), the campfire (unlit and
+  the lit animation), cable car, mine rails, ore cart, lighthouse, beacon,
+  and woodland mushrooms;
+- recolours made in `art/`: the sheep (the pack's pig re-wooled), the
+  weathered station and mine planks, the tilled field beds;
+- `assets/anim/*.png` water glints and the other vblank strips;
+- `assets/face/*.png` (pack facesets inside the pack's portrait frame) and
+  `assets/npc/*.png`, `assets/player-*.png` (pack frames and the pieces
+  above, one 16x16 image each);
+- `tests/goldens/*.png` and `docs/screenshots/*.png`, rendered from the
+  assets above.

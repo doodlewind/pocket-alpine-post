@@ -42,16 +42,19 @@ function count(
   return n;
 }
 
-// Palette colors the assertions use (sampled/defined in custom-art.ts and
-// the DialogBox/SaveMenu palette).
-const GRASS = (r: number, g: number, b: number): boolean => Math.abs(r - 132) < 25 && Math.abs(g - 198) < 25 && Math.abs(b - 105) < 25;
-const COBBLE = (r: number, g: number, b: number): boolean => Math.abs(r - 192) < 30 && Math.abs(g - 203) < 30 && Math.abs(b - 220) < 30;
+// Palette classes the assertions use, measured on the rendered frames:
+// Ninja Adventure olive grass, the warm cobblestone, pond water, the panel
+// theme (ui/theme.ts: parchment, dark ink, red-orange accent), the gold
+// HUD plate, and the lighthouse's red and white bands (art/custom.ts).
+const GRASS = (r: number, g: number, b: number): boolean => Math.abs(r - 173) < 14 && g > 150 && g < 215 && b < 75;
+const COBBLE = (r: number, g: number, b: number): boolean => r > 200 && g > 140 && b > 100 && b < 170 && r - b > 60;
 const WATER = (r: number, g: number, b: number): boolean => b > 180 && b - r > 40 && g > 130;
-const BOX_DARK = (r: number, g: number, b: number): boolean => r < 40 && g < 30 && b < 22;
-const TEXT_CREAM = (r: number, g: number, b: number): boolean => r > 235 && g > 215 && b > 180;
+const PAPER = (r: number, g: number, b: number): boolean => Math.abs(r - 242) < 8 && Math.abs(g - 234) < 8 && Math.abs(b - 241) < 8;
+const INK = (r: number, g: number, b: number): boolean => r < 130 && g < 125 && b < 135 && b >= r - 2;
+const ACCENT = (r: number, g: number, b: number): boolean => r > 195 && g < 120 && b < 100 && r - g > 90;
 const HUD_GOLD = (r: number, g: number, b: number): boolean => r > 145 && g > 115 && b < 110 && r - b > 50 && r - g < 45;
 const TOWER_RED = (r: number, g: number, b: number): boolean => r > 190 && g < 110 && b < 90 && r - g > 90;
-const TOWER_WHITE = (r: number, g: number, b: number): boolean => r > 215 && g > 215 && b > 205 && Math.abs(r - g) < 20;
+const TOWER_WHITE = (r: number, g: number, b: number): boolean => r > 245 && g > 215 && b > 195 && r - b < 60;
 
 describe("alpine-post golden — hub keyframe (f8)", async () => {
   const png = await load(8);
@@ -73,7 +76,8 @@ describe("alpine-post golden — hub keyframe (f8)", async () => {
   });
 
   test("the animated pond is blue at the south-east corner", async () => {
-    // Pond cells world (21..22, 11..12) -> screen (384..416, 192..224).
+    // The pond is painted over world (20..22, 10..12) -> screen
+    // (368..416, 176..224); its glints animate on (21..22, 11..12).
     expect(count(png.rgba, png.width, 380, 188, 420, 228, WATER)).toBeGreaterThan(100);
   });
 
@@ -86,18 +90,18 @@ describe("alpine-post golden — hub keyframe (f8)", async () => {
 describe("alpine-post golden — general store choices (f335)", async () => {
   const png = await load(335);
 
-  test("the choices panel fills the right-center with the dark dialog color", async () => {
-    expect(count(png.rgba, png.width, 224, 82, 464, 172, BOX_DARK)).toBeGreaterThan(2000);
+  test("the choices panel fills the right-center with parchment", async () => {
+    expect(count(png.rgba, png.width, 224, 82, 464, 172, PAPER)).toBeGreaterThan(2000);
   });
 
-  test("four cream choice rows are rendered", async () => {
+  test("four ink choice rows are rendered", async () => {
     // The four rows (Matches/Hot soup/Stamp/Sell) occupy y104..168.
-    const cream = count(png.rgba, png.width, 236, 100, 420, 172, TEXT_CREAM);
-    expect(cream).toBeGreaterThan(120);
+    const ink = count(png.rgba, png.width, 236, 100, 420, 172, INK);
+    expect(ink).toBeGreaterThan(120);
   });
 
-  test("the gold cursor on Matches and the gold HUD are visible", async () => {
-    expect(count(png.rgba, png.width, 236, 108, 260, 128, HUD_GOLD)).toBeGreaterThan(3);
+  test("the accent cursor on Matches and the gold HUD are visible", async () => {
+    expect(count(png.rgba, png.width, 236, 108, 260, 128, ACCENT)).toBeGreaterThan(3);
     expect(count(png.rgba, png.width, 8, 6, 96, 24, HUD_GOLD)).toBeGreaterThan(8);
   });
 
@@ -110,23 +114,23 @@ describe("alpine-post golden — lighthouse ending (f2812)", async () => {
   const png = await load(2812);
 
   test("the red and white lighthouse bands stand at the top center", async () => {
-    // Light world is 256x224 centered at (112,24); tower cells (7..8,
-    // 2..4) -> screen x224..240, red band rows 2..3 -> y56..88, white
-    // band rows 3..4 -> y72..104.
+    // Light world is 256x224 centered at (112,24); tower cells (7..8) ->
+    // screen x224..256, red band on row 3 -> y72..88, white band on row 4
+    // -> y88..104.
     expect(count(png.rgba, png.width, 220, 52, 246, 90, TOWER_RED)).toBeGreaterThan(40);
     expect(count(png.rgba, png.width, 220, 74, 246, 108, TOWER_WHITE)).toBeGreaterThan(20);
   });
 
   test("the bottom dialog box is open", async () => {
-    expect(count(png.rgba, png.width, 20, 192, 460, 264, BOX_DARK)).toBeGreaterThan(3000);
+    expect(count(png.rgba, png.width, 20, 192, 460, 264, PAPER)).toBeGreaterThan(3000);
   });
 
   test("THE END. heading and the five-parcel stanza are visible", async () => {
-    const heading = count(png.rgba, png.width, 22, 198, 130, 228, TEXT_CREAM);
+    const heading = count(png.rgba, png.width, 22, 198, 130, 228, INK);
     expect(heading).toBeGreaterThan(20);
-    // The word "five" appears in the stanza; assert a broad cream-text
+    // The word "five" appears in the stanza; assert a broad ink-text
     // presence across the stanza rows.
-    const stanza = count(png.rgba, png.width, 22, 224, 420, 256, TEXT_CREAM);
+    const stanza = count(png.rgba, png.width, 22, 224, 420, 256, INK);
     expect(stanza).toBeGreaterThan(90);
   });
 
