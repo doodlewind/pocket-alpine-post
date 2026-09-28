@@ -9,7 +9,13 @@ import { bootWorld, fnv1a, type SimWorld } from "../vendor/pocket-rpgkit/vendor/
 import { BTN } from "../vendor/pocket-rpgkit/vendor/pocketjs/contracts/spec/spec.ts";
 import type { SessionState } from "../vendor/pocket-rpgkit/src/engine/session.ts";
 import type { MenuState } from "../vendor/pocket-rpgkit/src/engine/save-menu.ts";
-import { appBundle } from "./helpers/boot.ts";
+import { appBundle, appPreflight } from "./helpers/boot.ts";
+
+// Without the built bundle/wasm these host tests cannot boot; register
+// them as skips with the build command printed once.
+const preflight = appPreflight();
+if (!preflight.ok) console.warn(`scaffold sim tests skipped: ${preflight.reason}`);
+const simDescribe = preflight.ok ? describe : describe.skip;
 
 interface Hooks {
   hasFs: () => boolean;
@@ -39,7 +45,7 @@ async function boot(): Promise<{ world: SimWorld; state: () => SessionState; hoo
   };
 }
 
-describe("alpine-post scaffold — built bundle boots the session", () => {
+simDescribe("alpine-post scaffold — built bundle boots the session", () => {
   test("starts on the hub at the authored start tile facing up", async () => {
     const { state } = await boot();
     expect(state().mapId).toBe("hub");

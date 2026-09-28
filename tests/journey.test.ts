@@ -26,7 +26,13 @@ import {
   type MilestoneSnapshot,
 } from "../game/journey.ts";
 import { ALPINE_TAPE_FRAMES, ALPINE_TAPE_RUNS, ALPINE_MILESTONES } from "./tape.ts";
-import { appBundle } from "./helpers/boot.ts";
+import { appBundle, appPreflight } from "./helpers/boot.ts";
+
+// Without the built bundle/wasm these host tests cannot boot; register
+// them as skips with the build command printed once.
+const preflight = appPreflight();
+if (!preflight.ok) console.warn(`journey sim tests skipped: ${preflight.reason}`);
+const simDescribe = preflight.ok ? describe : describe.skip;
 
 const RATES = [60, 30, 20, 4] as const;
 
@@ -94,7 +100,7 @@ describe("alpine-post journey — multi-rate state and text parity", () => {
   });
 });
 
-describe("alpine-post journey — built bundle double-run", () => {
+simDescribe("alpine-post journey — built bundle double-run", () => {
   async function drive(): Promise<{ hashes: string[]; states: SessionState[]; world: Awaited<ReturnType<typeof bootWorld>> }> {
     const world = await bootWorld(appBundle(), 60);
     const hashes: string[] = [];
@@ -148,7 +154,7 @@ describe("alpine-post journey — built bundle double-run", () => {
   }, 120000);
 });
 
-describe("alpine-post journey — save worldline", () => {
+simDescribe("alpine-post journey — save worldline", () => {
   test("save mid-run, diverge, load, replay suffix: states converge", async () => {
     // Reference: uninterrupted run.
     const ref = await (async () => {
@@ -284,7 +290,7 @@ describe("alpine-post journey — save worldline", () => {
   }, 120000);
 });
 
-describe("alpine-post journey — render op budget", () => {
+simDescribe("alpine-post journey — render op budget", () => {
   const COUNTED = ["createNode", "destroyNode", "insertBefore", "setImage", "setPropBatch", "setProp", "setSprite"] as const;
 
   test("peak counted ops per frame stays within the small-game budget", async () => {

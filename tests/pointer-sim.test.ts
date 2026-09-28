@@ -22,7 +22,13 @@ import {
 import { expandRuns } from "../game/journey.ts";
 import { ALPINE_TAPE_RUNS } from "../game/demo-tape.ts";
 import { encodePNG } from "../vendor/pocket-rpgkit/vendor/pocketjs/tests/png.ts";
-import { appBundle } from "./helpers/boot.ts";
+import { appBundle, appPreflight } from "./helpers/boot.ts";
+
+// Without the built bundle/wasm these host tests cannot boot; register
+// them as skips with the build command printed once.
+const preflight = appPreflight();
+if (!preflight.ok) console.warn(`pointer sim tests skipped: ${preflight.reason}`);
+const simDescribe = preflight.ok ? describe : describe.skip;
 
 interface Hooks {
   attract(): AttractStatus;
@@ -159,7 +165,7 @@ function overWhite(color: string, opacity: number): [number, number, number] {
   return rgb(color).map((channel) => Math.round(channel * opacity + 255 * (1 - opacity))) as [number, number, number];
 }
 
-describe("Alpine Post pointer — built bundle", () => {
+simDescribe("Alpine Post pointer — built bundle", () => {
   test("takeover notice has a high-contrast plate clear of the HELP plate", async () => {
     expect(intersects(ALPINE_CONTROL_PLATE_RECT, ALPINE_HELP_PLATE_RECT)).toBe(false);
     expect(contains(ALPINE_CONTROL_PLATE_RECT, ALPINE_CONTROL_TEXT_RECT)).toBe(true);
