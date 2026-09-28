@@ -13,12 +13,12 @@ lighthouse at the top. The same bundle runs on the desktop host, the web
 | ![Hamlet](tests/goldens/journey.8.png) | ![General store](tests/goldens/journey.335.png) | ![THE END](tests/goldens/journey.2812.png) |
 | The hamlet at the start | The general store | The lighthouse, THE END |
 
-On the macOS desktop host (`bun run desktop`; Metal, Apple M5 Pro): the
-attract demo, and the controls panel opened from the keyboard.
+On the macOS desktop host (`bun run desktop`; Metal, Apple M5 Pro):
 
-| | |
-| --- | --- |
-| ![Attract demo on macOS](docs/screenshots/macos-attract.png) | ![Controls on macOS](docs/screenshots/macos-help.png) |
+| | | |
+| --- | --- | --- |
+| ![Attract demo on macOS](docs/screenshots/macos-attract.png) | ![Dialog on macOS](docs/screenshots/macos-dialog.png) | ![Controls on macOS](docs/screenshots/macos-help.png) |
+| The attract demo at the farm | The postmaster's first line | The controls panel |
 
 ## The route
 
