@@ -53,7 +53,7 @@ keep the full button controls.
 ## Build, test, run
 
 ```sh
-git clone --recurse-submodules git@github.com:lfkdsk/pocket-alpine-post.git
+git clone --recurse-submodules https://github.com/lfkdsk/pocket-alpine-post.git
 cd pocket-alpine-post
 bun run setup          # submodules (recursive) + bun install
 bun run build:wasm     # one-time: the PocketJS wasm core for the sim tests
