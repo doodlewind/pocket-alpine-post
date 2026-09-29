@@ -58,9 +58,11 @@ import {
   type TilePoint,
 } from "../input/pointer.ts";
 import { PlayerSprite } from "./PlayerSprite.tsx";
-import { DialogBox } from "./DialogBox.tsx";
+import { DialogBox } from "../vendor/pocket-rpgkit/src/ui/DialogBox.tsx";
+import { Panel } from "../vendor/pocket-rpgkit/src/ui/Panel.tsx";
+import { SaveMenu, type SlotInfo } from "../vendor/pocket-rpgkit/src/ui/SaveMenu.tsx";
+import { FACE_SRC } from "./assets.ts";
 import { PANEL } from "./theme.ts";
-import { SaveMenu, type SlotInfo } from "./SaveMenu.tsx";
 import {
   ALPINE_CONTROL_PLATE_COLOR,
   ALPINE_CONTROL_PLATE_OPACITY,
@@ -798,8 +800,13 @@ export function GameView() {
         </Text>
       </View>
 
-      <DialogBox modal={modal} legend={actions.legend} />
-      <SaveMenu menu={menu} hasFs={fsSave} slots={slotList} saveCode={saveCode} osk={osk} legend={actions.legend} />
+      {/* The kit's boxes in the pack's HUD colours; portraits are 38x38 faces
+          in a 64x64 frame, so the text column starts 56 px in. */}
+      <DialogBox modal={modal} legend={actions.legend} theme={PANEL} faces={FACE_SRC} faceWidth={56} />
+      <SaveMenu
+        menu={menu} hasFs={fsSave} slots={slotList} saveCode={saveCode} osk={osk} legend={actions.legend}
+        theme={PANEL} title="ALPINE POST — SAVE"
+      />
 
       <Show when={pointer !== null && demo()?.phase !== "attract" && menu().kind === "closed" && modal() === null && !help()}>
         <View
@@ -827,24 +834,20 @@ export function GameView() {
 
       <Show when={help()}>
         <View class="absolute inset-0 flex-row justify-center items-center" style={{ posType: 1, bgColor: "#00000a" }} debugName="alpine-help-overlay">
-          <View class="flex-col p-[2]" style={{ width: 420, height: 232, bgColor: PANEL.border }}>
-            <View class="flex-col grow p-[1]" style={{ bgColor: PANEL.rim }}>
-            <View class="flex-col grow p-[7]" style={{ bgColor: PANEL.paper }}>
-              <Text class="text-sm" style={{ textColor: PANEL.accent, lineHeight: 18, height: 18 }}>ALPINE POST — CONTROLS</Text>
-              <View style={{ height: 7 }} />
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>ARROWS  walk / choose</Text>
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>Z or ENTER  talk / confirm</Text>
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>X or BACKSPACE  back</Text>
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>SPACE  save menu</Text>
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>Q or L  rewind 3 seconds</Text>
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>TAB  demo / restart demo</Text>
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>A or S  open / close help</Text>
-              <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>MOUSE  walk / advance / choose</Text>
-              <View class="grow" />
-              <Text class="text-xs" style={{ textColor: PANEL.dim, lineHeight: 14, height: 14 }}>A, S or click  close help</Text>
-            </View>
-            </View>
-          </View>
+          <Panel theme={PANEL} style={{ width: 420, height: 232 }} paperClass="flex-col grow p-[8]">
+          <Text class="text-sm" style={{ textColor: PANEL.accent, lineHeight: 18, height: 18 }}>ALPINE POST — CONTROLS</Text>
+          <View style={{ height: 7 }} />
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>ARROWS  walk / choose</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>Z or ENTER  talk / confirm</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>X or BACKSPACE  back</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>SPACE  save menu</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>Q or L  rewind 3 seconds</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>TAB  demo / restart demo</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>A or S  open / close help</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>MOUSE  walk / advance / choose</Text>
+          <View class="grow" />
+          <Text class="text-xs" style={{ textColor: PANEL.dim, lineHeight: 14, height: 14 }}>A, S or click  close help</Text>
+          </Panel>
         </View>
       </Show>
 
