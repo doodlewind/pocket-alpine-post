@@ -62,7 +62,13 @@ bun test               # 91 tests: world, quests, journey, attract, pointer,
                        # save/load worldlines, pinned goldens
 bunx tsc --noEmit
 bun run desktop        # build for the desktop host and open a window
+bun run package:macos  # on a Mac: dist/macos/Alpine Post.app + zip
 ```
+
+`package:macos` wraps the desktop host, the bundle and the pak into a
+double-clickable app with the lit lighthouse as its icon (Pocket RPG Kit's
+`tools/package-macos.ts`). It is ad-hoc signed, not notarized: a
+downloaded copy opens the first time with right-click > Open.
 
 `bun run gen-assets` rebakes every map image, sprite, portrait, and atlas
 from the Ninja Adventure sheets in `assets/src/ninja/` and the art scripts

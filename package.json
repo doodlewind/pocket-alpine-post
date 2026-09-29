@@ -16,7 +16,8 @@
     "test": "bun test tests/",
     "tsc": "bunx tsc --noEmit",
     "check": "bun tools/build.ts && bun test tests/ && bunx tsc --noEmit",
-    "desktop": "bun tools/desktop.ts"
+    "desktop": "bun tools/desktop.ts",
+    "package:macos": "bun vendor/pocket-rpgkit/tools/package-macos.ts --project-root . --icon tests/goldens/journey.2812.png --icon-crop 192,24,96,96"
   },
   "devDependencies": {
     "@types/bun": "^1.2.0",
