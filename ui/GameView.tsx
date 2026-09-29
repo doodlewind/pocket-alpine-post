@@ -822,7 +822,7 @@ export function GameView() {
           }}
           debugName="alpine-help-button"
         >
-          <Text class="text-xs" style={{ textColor: "#c7a97c", lineHeight: 13, height: 13, insetT: 2 }}>A HELP</Text>
+          <Text class="text-xs" style={{ textColor: "#c7a97c", lineHeight: 13, height: 13, insetT: 2 }}>S HELP</Text>
         </View>
       </Show>
 
@@ -843,10 +843,10 @@ export function GameView() {
           <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>SPACE  save menu</Text>
           <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>Q or L  rewind 3 seconds</Text>
           <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>TAB  demo / restart demo</Text>
-          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>A or S  open / close help</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>S  open / close help</Text>
           <Text class="text-xs" style={{ textColor: PANEL.ink, lineHeight: 17, height: 17 }}>MOUSE  walk / advance / choose</Text>
           <View class="grow" />
-          <Text class="text-xs" style={{ textColor: PANEL.dim, lineHeight: 14, height: 14 }}>A, S or click  close help</Text>
+          <Text class="text-xs" style={{ textColor: PANEL.dim, lineHeight: 14, height: 14 }}>S or click  close help</Text>
           </Panel>
         </View>
       </Show>

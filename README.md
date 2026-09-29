@@ -20,6 +20,13 @@ On the macOS desktop host (`bun run desktop`; Metal, Apple M5 Pro):
 | ![Attract demo on macOS](docs/screenshots/macos-attract.png) | ![Dialog on macOS](docs/screenshots/macos-dialog.png) | ![Controls on macOS](docs/screenshots/macos-help.png) |
 | The attract demo at the farm | The postmaster's first line | The controls panel |
 
+**In the browser:** <https://lfkdsk.github.io/pocket-alpine-post/> plays
+the same bundle on the PocketJS core compiled to WebAssembly (Pocket RPG
+Kit's `tools/web.ts`; `web.json` holds the card text and the key bindings).
+The keys are the ones the in-game help lists, the mouse and touch walk and
+talk as on the desktop, and saves are save codes: the browser has no
+`data.fs`.
+
 ## The route
 
 - **Mountain Hamlet** (24×15): the post office hands you the mailbag; the
@@ -44,8 +51,8 @@ current frame; **L** rewinds three virtual seconds; **SELECT** hands the
 session back to the demo.
 
 **Controls.** Arrow keys move and select; `Z` or Enter confirms; `X` or
-Backspace cancels; `A` or `S` opens help; `Q` or `L` rewinds; Tab starts or
-restarts the demo; Space opens the save menu. On the desktop, click a
+Backspace cancels; `S` opens help (`A` too on the desktop); `Q` or `L` rewinds; Tab starts or
+restarts the demo; Space opens the save menu. On the desktop and the web, click a
 visible map tile to walk there or a dialog to advance; press a choice row
 to highlight it and release to confirm. Hosts without the pointer channel
 keep the full button controls.
@@ -63,6 +70,7 @@ bun test               # 91 tests: world, quests, journey, attract, pointer,
 bunx tsc --noEmit
 bun run desktop        # build for the desktop host and open a window
 bun run package:macos  # on a Mac: dist/macos/Alpine Post.app + zip
+bun run web            # the browser build in dist/web
 ```
 
 `package:macos` wraps the desktop host, the bundle and the pak into a
